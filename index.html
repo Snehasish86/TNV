@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="tweNova Digital Solutions Agency - Digital Solutions That Grow Your Business. Expert services in Website Development, Mobile Apps, UI/UX Design, Digital Marketing, SEO, and More.">
+    <meta name="keywords" content="digital agency, web development, mobile apps, UI/UX design, digital marketing, SEO services">
+    <meta name="author" content="tweNova Digital Solutions Agency">
+    <title>tweNova Digital Solutions Agency | Make Together Grow Together</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body class="theme-dark">
+
+    <!-- Header / Navigation -->
+    <header id="navbar">
+        <nav class="container nav-wrapper">
+            <a href="index.html" class="logo">
+                twe<span>Nova</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="has-mega">
+                    <a href="services.html">Our Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-banner" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800');">
+                            <div class="mega-banner-content">
+                                <h3>Digital Solutions</h3>
+                                <p>Comprehensive services to scale your business.</p>
+                            </div>
+                        </div>
+                        <div class="mega-grid services-mega-grid" style="grid-template-columns: repeat(2, 1fr);">
+                            <div class="mega-col">
+                                <ul class="mega-links">
+                                    <li><a href="#"><i class="fa-solid fa-users-gear"></i> Team Extension</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-microchip"></i> Product Engineering</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-code"></i> Web Development</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-brain"></i> AI-ML-Development</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-mobile-screen"></i> Mobile Application</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-bullhorn"></i> Digital Marketing</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <ul class="mega-links">
+                                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> E-Commerce</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-link"></i> Blockchain Development</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-cloud"></i> Cloud And DevOps</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-vial-circle-check"></i> Quality Analyst</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-wand-magic-sparkles"></i> UI/UX Design</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-headset"></i> Back Office Support</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega">
+                    <a href="#">Hire Developers <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-banner" style="background-image: url('assets/images/mega-menu-banner.webp');">
+                            <div class="mega-banner-content">
+                                <h3>Your ideal choice</h3>
+                                <p>Just any one talent or a full-cycle development team.</p>
+                            </div>
+                        </div>
+                        <div class="mega-grid">
+                            <div class="mega-col">
+                                <h4>Hire Web Developers</h4>
+                                <ul class="mega-links">
+                                    <li><a href="#"><i class="fa-solid fa-code"></i> Hire PHP Developers</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-code-branch"></i> Hire Laravel Developers</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-file-code"></i> Hire CodeIgniter Developers</a></li>
+                                    <li><a href="#"><i class="fa-brands fa-node-js"></i> Hire NodeJs Developers</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Hire Mobile Developers</h4>
+                                <ul class="mega-links">
+                                    <li><a href="#"><i class="fa-brands fa-apple"></i> Hire iOS Developers</a></li>
+                                    <li><a href="#"><i class="fa-brands fa-android"></i> Hire Android Developers</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-mobile"></i> Hire Flutter Developers</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-mobile-screen"></i> Hire React Native Developers</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Hire Frontend Developers</h4>
+                                <ul class="mega-links">
+                                    <li><a href="#"><i class="fa-brands fa-angular"></i> Hire Angular Developers</a></li>
+                                    <li><a href="#"><i class="fa-brands fa-react"></i> Hire React JS Developers</a></li>
+                                    <li><a href="#"><i class="fa-brands fa-vuejs"></i> Hire VueJS Developers</a></li>
+                                    <li><a href="#"><i class="fa-brands fa-html5"></i> Hire HTML Developer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="contact.html">Partner With Us</a></li>
+                <li><a href="careers.html">Career</a></li>
+                <li><a href="#" class="menu-btn">Menu</a></li>
+            </ul>
+            
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- High-Fidelity Hero Section -->
+        <section class="hero-v2">
+            <div class="hero-v2-bg"></div>
+            <div class="container">
+                <div class="hero-v2-grid">
+                    <div class="hero-v2-content" data-aos="fade-right">
+                        <div class="hero-v2-status">
+                            <span class="status-dot"></span>
+                            Make Together, Grow Together
+                        </div>
+                        <h1 class="hero-v2-title">
+                            Build. Innovate.<br>
+                            Grow <span>with tweNova</span>
+                        </h1>
+                        <p class="hero-v2-desc">
+                            We help businesses transform digitally with mobile apps, websites, cloud solutions, AI agents, and digital marketing services designed to scale your business in the modern world.
+                        </p>
+                        
+                        <form class="hero-v2-form" action="#">
+                            <input type="email" placeholder="Your work e-mail" required>
+                            <button type="submit" class="btn-submit">
+                                Get Started <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </form>
+                        
+                        <p class="hero-v2-meta">
+                            Ready to transform? <a href="contact.html">Book a free consultation</a>
+                        </p>
+                    </div>
+
+                    <div class="hero-v2-visual" data-aos="fade-left">
+                        <div class="glass-main-card">
+                            <div class="swiper heroSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" alt="Digital Infrastructure" class="node-graphic">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" alt="Global Network" class="node-graphic">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80" alt="Hardware Technology" class="node-graphic">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Floating notification -->
+                            <div class="floating-notif">
+                                <div class="notif-icon">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                                <div class="notif-text">
+                                    <span>New Project Started</span>
+                                    <small>Just now</small>
+                                </div>
+                            </div>
+
+                            <div class="hero-v2-stats-row">
+                                <div class="hero-mini-stat">
+                                    <span class="mini-stat-label">Apps Deployed</span>
+                                    <span class="mini-stat-val">124</span>
+                                </div>
+                                <div class="hero-mini-stat">
+                                    <span class="mini-stat-label">Uptime</span>
+                                    <span class="mini-stat-val" style="color:#10b981;">99.9%</span>
+                                </div>
+                                <div class="hero-mini-stat">
+                                    <span class="mini-stat-label">Response</span>
+                                    <span class="mini-stat-val" style="color:#6366f1;">45ms</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Bottom Stats & Logo Bar -->
+        <div class="hero-v2-bottom-bar">
+            <div class="container">
+                <div class="hero-v2-bottom-grid">
+                    <div class="bottom-stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="stat-number">50+</h4>
+                        <p>Projects Delivered</p>
+                    </div>
+                    <div class="bottom-stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <h4 class="stat-number">30+</h4>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="bottom-stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <h4 class="stat-number">4-5</h4>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="bottom-stat-item" data-aos="fade-up" data-aos-delay="400">
+                        <h4 class="stat-number">99%</h4>
+                        <p>Client Satisfaction</p>
+                    </div>
+                </div>
+
+                <div class="hero-v2-trusted-bar" data-aos="fade-up" data-aos-delay="500">
+                    <span class="trusted-label">Trusted By Innovative Companies</span>
+                    <div class="logo-bar-container">
+                        <div class="logo-grid">
+                            <div class="logo-item">Ares</div>
+                            <div class="logo-item">CloudPeak</div>
+                            <div class="logo-item">DataFlow</div>
+                            <div class="logo-item">InnoSoft</div>
+                            <div class="logo-item">DigitalEdge</div>
+                            <div class="logo-item">SmartBiz</div>
+                            <div class="logo-item">AppForge</div>
+                            <div class="logo-item">NetPrime</div>
+                            <div class="logo-item">TechVentures</div>
+                            <!-- Duplicated for infinite loop -->
+                            <div class="logo-item">Ares</div>
+                            <div class="logo-item">CloudPeak</div>
+                            <div class="logo-item">DataFlow</div>
+                            <div class="logo-item">InnoSoft</div>
+                            <div class="logo-item">DigitalEdge</div>
+                            <div class="logo-item">SmartBiz</div>
+                            <div class="logo-item">AppForge</div>
+                            <div class="logo-item">NetPrime</div>
+                            <div class="logo-item">TechVentures</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 2: Divider Button Section           -->
+        <!-- ============================================ -->
+        <div class="devider-btn-sec">
+            <div class="container">
+                <div class="devider-inner">
+                    <div class="devider-line"></div>
+                    <a href="about.html" class="devider-btn">
+                        <span>Discover tweNova</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <div class="devider-line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 3: Home About Section               -->
+        <!-- ============================================ -->
+        <section class="home-abt-sec">
+            <div class="container">
+                <div class="home-abt-grid">
+                    <div class="home-abt-visual" data-aos="fade-right">
+                        <div class="abt-img-main">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" alt="tweNova Team" class="abt-main-img">
+                        </div>
+                        <div class="abt-floating-card abt-card-1">
+                            <div class="abt-card-icon"><i class="fa-solid fa-trophy"></i></div>
+                            <div class="abt-card-text">
+                                <strong>Award-Winning</strong>
+                                <span>Recognized Agency</span>
+                            </div>
+                        </div>
+                        <div class="abt-floating-card abt-card-2">
+                            <div class="abt-card-icon abt-icon-green"><i class="fa-solid fa-users"></i></div>
+                            <div class="abt-card-text">
+                                <strong>50+ Developers</strong>
+                                <span>Dedicated Experts</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-abt-content" data-aos="fade-left">
+                        <div class="section-tag">About tweNova</div>
+                        <h2 class="section-title">We Are Your <span>Trusted Digital</span> Growth Partner</h2>
+                        <p>tweNova is a full-stack digital solutions company that helps startups and enterprises build, scale, and thrive in the digital era. Founded on the principle of making together and growing together, we bring engineering excellence to every project we undertake.</p>
+                        <p style="margin-top: 20px;">Our multidisciplinary team of developers, designers, and strategists collaborates closely with clients to deliver solutions that are not just functional — but transformative.</p>
+                        <div class="abt-feature-list">
+                            <div class="abt-feature-item">
+                                <div class="abt-feature-icon"><i class="fa-solid fa-check-circle"></i></div>
+                                <span>Agile development process with transparent communication</span>
+                            </div>
+                            <div class="abt-feature-item">
+                                <div class="abt-feature-icon"><i class="fa-solid fa-check-circle"></i></div>
+                                <span>End-to-end ownership from ideation to deployment</span>
+                            </div>
+                            <div class="abt-feature-item">
+                                <div class="abt-feature-icon"><i class="fa-solid fa-check-circle"></i></div>
+                                <span>Post-launch support and continuous improvement cycles</span>
+                            </div>
+                        </div>
+                        <div class="abt-cta-row">
+                            <a href="about.html" class="btn btn-primary">Learn More About Us <i class="fa-solid fa-arrow-right"></i></a>
+                            <div class="abt-years-badge">
+                                <strong>4+</strong>
+                                <span>Years of Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 4: Facts & Figures Section          -->
+        <!-- ============================================ -->
+        <section class="fact-figure-section">
+            <div class="fact-figure-bg"></div>
+            <div class="container">
+                <div class="section-header" data-aos="fade-up" style="text-align:center; margin-bottom: 70px;">
+                    <h2 class="section-title" style="color:#fff;">Numbers That <span>Tell Our Story</span></h2>
+                    <p class="section-desc" style="color:rgba(255,255,255,0.7);">Four years of dedicated work, measurable impact, and clear client love.</p>
+                </div>
+                <div class="fact-figure-grid">
+                    <div class="fact-figure-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="fact-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <div class="fact-counter" data-target="50">0</div>
+                        <div class="fact-plus">+</div>
+                        <p class="fact-label">Projects Delivered</p>
+                    </div>
+                    <div class="fact-figure-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="fact-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="fact-counter" data-target="30">0</div>
+                        <div class="fact-plus">+</div>
+                        <p class="fact-label">Happy Clients</p>
+                    </div>
+                    <div class="fact-figure-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="fact-icon"><i class="fa-solid fa-code-branch"></i></div>
+                        <div class="fact-counter" data-target="120">0</div>
+                        <div class="fact-plus">K+</div>
+                        <p class="fact-label">Lines of Code Written</p>
+                    </div>
+                    <div class="fact-figure-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="fact-icon"><i class="fa-solid fa-star"></i></div>
+                        <div class="fact-counter" data-target="99">0</div>
+                        <div class="fact-plus">%</div>
+                        <p class="fact-label">Client Satisfaction</p>
+                    </div>
+                    <div class="fact-figure-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="fact-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div class="fact-counter" data-target="12">0</div>
+                        <div class="fact-plus">+</div>
+                        <p class="fact-label">Countries Served</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- High-Fidelity Expertise Section -->
+        <section class="expertise-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up" style="max-width: 800px; margin-bottom: 60px;">
+                    <h2 class="section-title" style="font-size: 3rem; margin-bottom: 20px;">Our <span>Expertise</span></h2>
+                    <p class="section-desc" style="font-size: 1.1rem; color: #ccc; line-height: 1.8;">
+                        At <span style="color:var(--color-orange); font-weight:600;">tweNova</span>, we transform your business with our tested and cutting-edge corporate and consumer solutions. As a leading <span style="color:var(--color-orange);">digital solutions company</span>, our expertise lies in developing custom software solutions that cater to the specific needs of our clients.
+                    </p>
+                </div>
+
+                <div class="expertise-grid-hf">
+                    <!-- Blockchain Development -->
+                    <div class="expertise-item-card" data-aos="zoom-in" data-aos-delay="100" style="background-image: url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600');">
+                        <div class="expertise-overlay"></div>
+                        <div class="expertise-content-inner">
+                            <div class="expertise-icon-large"><i class="fa-solid fa-link"></i></div>
+                            <h3>Blockchain Development</h3>
+                        </div>
+                    </div>
+
+                    <!-- AI-ML Development -->
+                    <div class="expertise-item-card" data-aos="zoom-in" data-aos-delay="200" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600');">
+                        <div class="expertise-overlay"></div>
+                        <div class="expertise-content-inner">
+                            <div class="expertise-icon-large"><i class="fa-solid fa-brain"></i></div>
+                            <h3>AI-ML Development</h3>
+                        </div>
+                    </div>
+
+                    <!-- Product Engineering -->
+                    <div class="expertise-item-card" data-aos="zoom-in" data-aos-delay="300" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600');">
+                        <div class="expertise-overlay"></div>
+                        <div class="expertise-content-inner">
+                            <div class="expertise-icon-large"><i class="fa-solid fa-microchip"></i></div>
+                            <h3>Product Engineering</h3>
+                        </div>
+                    </div>
+
+                    <!-- Web Development -->
+                    <div class="expertise-item-card" data-aos="zoom-in" data-aos-delay="400" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600');">
+                        <div class="expertise-overlay"></div>
+                        <div class="expertise-content-inner">
+                            <div class="expertise-icon-large"><i class="fa-solid fa-code"></i></div>
+                            <h3>Web Development</h3>
+                        </div>
+                    </div>
+
+                    <!-- Mobile App Development -->
+                    <div class="expertise-item-card" data-aos="zoom-in" data-aos-delay="500" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600');">
+                        <div class="expertise-overlay"></div>
+                        <div class="expertise-content-inner">
+                            <div class="expertise-icon-large"><i class="fa-solid fa-mobile-screen"></i></div>
+                            <h3>Mobile App Development</h3>
+                        </div>
+                    </div>
+
+                    <!-- UI/UX Design -->
+                    <div class="expertise-item-card" data-aos="zoom-in" data-aos-delay="600" style="background-image: url('https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?w=600');">
+                        <div class="expertise-overlay"></div>
+                        <div class="expertise-content-inner">
+                            <div class="expertise-icon-large"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                            <h3>UI/UX Design</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Section -->
+        <section class="tech-section-hf">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Technologies We <span>Work With</span></h2>
+                    <p class="section-desc">Transform your business with our proven and innovative corporate and consumer solutions. We go beyond the technology to create a strategic roadmap to ensure success of your business.</p>
+                </div>
+                
+                <div class="tech-hf-grid">
+                    <div class="tech-sidebar" data-aos="fade-right">
+                        <ul class="tech-pills">
+                            <li class="tech-pill active" data-target="emerging">Emerging Tech</li>
+                            <li class="tech-pill" data-target="frontend">Frontend</li>
+                            <li class="tech-pill" data-target="backend">Backend</li>
+                            <li class="tech-pill" data-target="mobile">Mobile</li>
+                            <li class="tech-pill" data-target="frameworks">Frameworks</li>
+                            <li class="tech-pill" data-target="cloud">Cloud</li>
+                            <li class="tech-pill" data-target="ecommerce">eCommerce</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-main-panel" data-aos="fade-left">
+                        <!-- Content for each tab will be here -->
+                        <div class="tech-tab-content active" id="emerging">
+                            <div class="tech-info">
+                                <h3>Emerging Tech</h3>
+                                <p>We help businesses leverage the power of disruptive technologies to stay ahead of the curve. From Blockchain to AI/ML, our solutions are designed to drive innovation and efficiency.</p>
+                            </div>
+                            <div class="tech-icons-grid">
+                                <div class="tech-icon-item"><i class="fa-brands fa-bitcoin"></i><span>Blockchain</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-brain"></i><span>AI/ML</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-robot"></i><span>Chatbot</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-microchip"></i><span>IoT</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-chart-line"></i><span>Data Analytics</span></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-tab-content" id="frontend">
+                            <div class="tech-info">
+                                <h3>Frontend Development</h3>
+                                <p>Our frontend experts create stunning, responsive, and user-centric interfaces using the latest technologies. We focus on performance and accessibility to deliver a premium user experience.</p>
+                            </div>
+                            <div class="tech-icons-grid">
+                                <div class="tech-icon-item"><i class="fa-brands fa-react"></i><span>React.js</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-vuejs"></i><span>Vue.js</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-angular"></i><span>Angular</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-js"></i><span>Next.js</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-html5"></i><span>HTML5/CSS3</span></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-tab-content" id="backend">
+                            <div class="tech-info">
+                                <h3>Backend Systems</h3>
+                                <p>Build robust, scalable, and secure backend architectures that power your applications. We specialize in high-performance server-side solutions and complex database management.</p>
+                            </div>
+                            <div class="tech-icons-grid">
+                                <div class="tech-icon-item"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-python"></i><span>Python/Django</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-php"></i><span>PHP/Laravel</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-java"></i><span>Java/Spring</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-tab-content" id="mobile">
+                            <div class="tech-info">
+                                <h3>Mobile Excellence</h3>
+                                <p>Deliver seamless experiences across iOS and Android. Our mobile development team builds high-performance native and cross-platform apps that users love.</p>
+                            </div>
+                            <div class="tech-icons-grid">
+                                <div class="tech-icon-item"><i class="fa-brands fa-apple"></i><span>iOS Native</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-android"></i><span>Android Native</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-layer-group"></i><span>Flutter</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-react"></i><span>React Native</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-code"></i><span>Kotlin/Swift</span></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-tab-content" id="frameworks">
+                            <div class="tech-info">
+                                <h3>Modern Frameworks</h3>
+                                <p>We utilize cutting-edge frameworks to accelerate development and ensure code quality. Our expertise spans across a wide range of industry-standard tools.</p>
+                            </div>
+                            <div class="tech-icons-grid">
+                                <div class="tech-icon-item"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-wind"></i><span>Tailwind CSS</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-sass"></i><span>Sass/SCSS</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-bolt"></i><span>FastAPI</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-flask"></i><span>Flask</span></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-tab-content" id="cloud">
+                            <div class="tech-info">
+                                <h3>Cloud & DevOps</h3>
+                                <p>Scale your infrastructure with confidence. We provide comprehensive cloud migration, management, and DevOps automation services for maximum reliability.</p>
+                            </div>
+                            <div class="tech-icons-grid">
+                                <div class="tech-icon-item"><i class="fa-brands fa-aws"></i><span>AWS</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-google"></i><span>Google Cloud</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-cubes"></i><span>Kubernetes</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-digital-ocean"></i><span>DigitalOcean</span></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-tab-content" id="ecommerce">
+                            <div class="tech-info">
+                                <h3>E-Commerce Solutions</h3>
+                                <p>Build powerful online stores that drive sales. We create customized e-commerce experiences with secure payments and scalable product management.</p>
+                            </div>
+                            <div class="tech-icons-grid">
+                                <div class="tech-icon-item"><i class="fa-brands fa-shopify"></i><span>Shopify</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-magento"></i><span>Magento</span></div>
+                                <div class="tech-icon-item"><i class="fa-brands fa-wordpress"></i><span>WooCommerce</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-cart-shopping"></i><span>BigCommerce</span></div>
+                                <div class="tech-icon-item"><i class="fa-solid fa-bag-shopping"></i><span>Custom Store</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Section (NEW) -->
+        <section class="case-studies-section" data-aos="fade-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Success <span>Stories</span></h2>
+                    <p class="section-desc">Explore how we've helped leading organizations achieve their digital transformation goals through innovative solutions and strategic engineering.</p>
+                </div>
+
+                <div class="swiper caseStudySwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Case Study 1: DRDO -->
+                        <div class="swiper-slide">
+                            <div class="case-study-card">
+                                <div class="cs-content">
+                                    <span class="cs-category">Government & Defence</span>
+                                    <h3 class="cs-title">DRDO | Strategic Resource Management</h3>
+                                    <p class="cs-description">
+                                        We developed a highly secure, scalable resource management system for the Department of Defence Research & Development. The solution streamlines complex workflows and ensures data integrity across multiple locations.
+                                    </p>
+                                    <div class="cs-tech-tags">
+                                        <span>Enterprise Architecture</span>
+                                        <span>Security</span>
+                                        <span>Real-time Analytics</span>
+                                    </div>
+                                    <a href="portfolio.html" class="btn btn-outline-primary btn-sm">VIEW CASE STUDY</a>
+                                </div>
+                                <div class="cs-mockup">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000" alt="DRDO Project Mockup" class="mockup-img">
+                                    <div class="mockup-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Case Study 2: Groomly -->
+                        <div class="swiper-slide">
+                            <div class="case-study-card">
+                                <div class="cs-content">
+                                    <span class="cs-category">Mobile Commerce</span>
+                                    <h3 class="cs-title">Groomly | On-Demand Services</h3>
+                                    <p class="cs-description">
+                                        An innovative grooming app that connects users with professional services. We built a robust booking system, real-time tracking, and a seamless payment gateway for a frictionless user experience.
+                                    </p>
+                                    <div class="cs-tech-tags">
+                                        <span>React Native</span>
+                                        <span>Node.js</span>
+                                        <span>AWS Cloud</span>
+                                    </div>
+                                    <a href="portfolio.html" class="btn btn-outline-primary btn-sm">VIEW CASE STUDY</a>
+                                </div>
+                                <div class="cs-mockup">
+                                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1000" alt="Groomly Project Mockup" class="mockup-img">
+                                    <div class="mockup-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Case Study 3: DataSense -->
+                        <div class="swiper-slide">
+                            <div class="case-study-card">
+                                <div class="cs-content">
+                                    <span class="cs-category">FinTech</span>
+                                    <h3 class="cs-title">DataSense | Financial Analytics</h3>
+                                    <p class="cs-description">
+                                        A comprehensive financial dashboard providing real-time data visualization and predictive analytics. Our solution helped the client reduce operational costs by 30% through automated reporting.
+                                    </p>
+                                    <div class="cs-tech-tags">
+                                        <span>Power BI</span>
+                                        <span>Python</span>
+                                        <span>Big Data</span>
+                                    </div>
+                                    <a href="portfolio.html" class="btn btn-outline-primary btn-sm">VIEW CASE STUDY</a>
+                                </div>
+                                <div class="cs-mockup">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bbbda5366391?w=1000" alt="DataSense Mockup" class="mockup-img">
+                                    <div class="mockup-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination cs-pagination"></div>
+                    <div class="swiper-button-next cs-nav-btn"></div>
+                    <div class="swiper-button-prev cs-nav-btn"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hire Dedicated Developer Section -->
+        <section class="hire-dedicated-section">
+            <div class="container">
+                <div class="hire-grid">
+                    <div class="hire-content" data-aos="fade-right">
+                        <h2 class="section-title" style="color:#fff;">Hire Dedicated <span>Developers</span></h2>
+                        <p style="color:#ccc; font-size:1.1rem; margin-bottom:30px;">
+                            We will bring the expertise and specialization your business needs to build and perform with ease in a competitive environment. From using the best Blockchain, Frontend, Backend, Web, Mobility, Data Analytics, UI/UX technologies, and practices, we make your solutions click and engagement worthy.
+                        </p>
+                        <a href="contact.html" class="btn btn-primary btn-lg">HIRE DEVELOPER <i class="fa-solid fa-arrow-right" style="margin-left:10px;"></i></a>
+                    </div>
+                    <div class="hire-image-wrapper" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800" alt="Hire Developers">
+                        <div class="hire-badge">
+                            <span style="font-size:1.5rem;">100%</span>
+                            <span style="font-size:0.7rem;">DEDICATED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About tweNova & Stats -->
+        <section class="section about-stats-section" style="background:#fff; color:#000;">
+            <div class="container">
+                <div class="about-intro-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:60px; margin-bottom:80px; align-items:center;">
+                    <div class="about-text" data-aos="fade-right">
+                        <h2 class="section-title">About <span>tweNova</span></h2>
+                        <p style="color:#444;">
+                            tweNova started with the vision to craft 360-degree digital solutions using the best IT and marketing professionals and creative storytelling to help you grow your business. Commenced in 2016, we are providing digital solutions to startups, businesses, and enterprises according to their niche requirements, with a growing list of satisfied clients nationally and internationally.
+                        </p>
+                        <a href="about.html" class="btn btn-outline-dark" style="margin-top:20px;">EXPLORE <i class="fa-solid fa-arrow-right" style="margin-left:10px;"></i></a>
+                    </div>
+                    <div class="about-highlights" data-aos="fade-left">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-number">6+</span>
+                                <span class="stat-label">Years of Experience</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">92%</span>
+                                <span class="stat-label">Client Satisfaction</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">In-House Talent</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">600+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Vision to Reality Section -->
+        <section class="process-section">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <h2 class="section-title">Getting you from <span>vision to reality</span></h2>
+                    <p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">We listen, advise, design and deliver world-class, user-friendly IT products for clients in an agile way. How? Through our project experience and collective knowledge, we have established our way of bringing value to our clients.</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="process-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="process-number">01</div>
+                        <h3>Strategic Analysis</h3>
+                        <p style="color:#aaa;">Result: a set of recommendations leading to a high-level solution plan</p>
+                    </div>
+                    <div class="process-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="process-number">02</div>
+                        <h3>Planning & Design</h3>
+                        <p style="color:#aaa;">Result: a product development plan</p>
+                    </div>
+                    <div class="process-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="process-number">03</div>
+                        <h3>Solution Delivery</h3>
+                        <p style="color:#aaa;">Result: a market-ready product made with users in mind</p>
+                    </div>
+                    <div class="process-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="process-number">04</div>
+                        <h3>Managing & Innovating</h3>
+                        <p style="color:#aaa;">Result: an approach of constant innovation for your organisation's agility</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What People Say About Us -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">What <span>People Say</span> About Us</h2>
+                </div>
+                
+                <div class="swiper testimonialSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"From the first day I contacted tweNova to show them my website project all managers were eager to start working in a new design that would satisfy my need. To this day I'm very happy I did contact tweNova they have created a website that fulfill all my expectations of what I wanted for my Ecommerce store."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Jose Robles" class="author-img">
+                                    <div class="author-info">
+                                        <h4 style="margin:0;">Jose Robles</h4>
+                                        <span style="color:var(--color-orange); font-size:0.8rem;">CEO, Retail Solutions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Latest Blog -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:60px;">
+                    <h2 class="section-title" style="margin:0;">Our <span>Latest Blog</span></h2>
+                    <a href="blog.html" class="btn btn-primary">VIEW OUR ALL BLOGS <i class="fa-solid fa-arrow-right" style="margin-left:10px;"></i></a>
+                </div>
+
+                <div class="blog-grid">
+                    <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">March 11, 2026</span>
+                            <h3>The Role of AI in Digital Marketing: Smarter Campaigns</h3>
+                            <p style="color:#666; font-size:0.9rem; margin-top:15px;">Digital marketing has evolved. Customers expect personalized experiences across all channels...</p>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">March 10, 2026</span>
+                            <h3>How to Choose the Right Tech Stack for Your Startup</h3>
+                            <p style="color:#666; font-size:0.9rem; margin-top:15px;">Selecting the right technology stack is one of the most critical decisions for any new business...</p>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">March 09, 2026</span>
+                            <h3>Top 10 Web Design Trends to Watch in 2026</h3>
+                            <p style="color:#666; font-size:0.9rem; margin-top:15px;">Stay ahead of the competition with these cutting-edge design trends that are shaping the web...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col" data-aos="fade-up">
+                <a href="index.html" class="logo">twe<span>Nova</span></a>
+                <p style="margin-top:20px; color:#aaa; font-size:14px; line-height:1.8;">
+                    Leading digital agency focused on building next-gen technological solutions for businesses worldwide. We transform ideas into digital reality.
+                </p>
+                <div class="footer-social" style="margin-top:25px; display:flex; gap:15px;">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="color:#fff; margin-bottom:25px;">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h4 style="color:#fff; margin-bottom:25px;">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Mobile App Development</a></li>
+                    <li><a href="#">Cloud Solutions</a></li>
+                    <li><a href="#">AI Innovation</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h4 style="color:#fff; margin-bottom:25px;">Contact Info</h4>
+                <ul class="footer-contact-info" style="list-style:none; color:#aaa; font-size:14px;">
+                    <li style="margin-bottom:15px;"><i class="fa-solid fa-location-dot" style="color:var(--color-orange); margin-right:10px;"></i> 123 Tech Avenue, India</li>
+                    <li style="margin-bottom:15px;"><i class="fa-solid fa-envelope" style="color:var(--color-orange); margin-right:10px;"></i> contact@twenova.com</li>
+                    <li style="margin-bottom:15px;"><i class="fa-solid fa-phone" style="color:var(--color-orange); margin-right:10px;"></i> +1 234 567 890</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center" style="margin-top:80px; padding:30px 0; border-top:1px solid #222; color:#555; font-size:13px;">
+            <p>&copy; 2024 tweNova Digital Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 1000, once: true });
+            
+            new Swiper(".heroSwiper", {
+                loop: true,
+                autoplay: { delay: 5000 },
+                pagination: { el: ".swiper-pagination", clickable: true },
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                effect: 'fade',
+                fadeEffect: { crossFade: true }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# Task List - tweNova Website Build
+
+- [ ] Project Setup <!-- id: 0 -->
+    - [x] Read PRD, Design Document, and Tech Stack documentation <!-- id: 1 -->
+    - [x] Create `task.md` <!-- id: 2 -->
+    - [ ] Create project workflow reference <!-- id: 3 -->
+    - [ ] Create implementation plan <!-- id: 4 -->
+- [ ] Base Architecture & Assets <!-- id: 5 -->
+    - [ ] Initialize project structure (folders and empty files) <!-- id: 6 -->
+    - [ ] Create `index.css` with design tokens from documentation <!-- id: 7 -->
+    - [ ] Create `script.js` with module structure and initializations <!-- id: 8 -->
+    - [ ] Generate placeholder assets/images using `generate_image` <!-- id: 9 -->
+- [ ] Homepage Implementation (index.html) <!-- id: 10 -->
+    - [ ] Implement Sticky Navbar with mega menu <!-- id: 11 -->
+    - [ ] Implement Hero Section with animations <!-- id: 12 -->
+    - [ ] Implement About Us Section with image mosaic <!-- id: 13 -->
+    - [ ] Implement Services Section (6 cards) <!-- id: 14 -->
+    - [ ] Implement Why Choose Us Section (6 cards) <!-- id: 15 -->
+    - [ ] Implement Stats Counter Bar <!-- id: 16 -->
+    - [ ] Implement Mission & Vision Section <!-- id: 17 -->
+    - [ ] Implement Contact Section with validation <!-- id: 18 -->
+    - [ ] Implement Footer <!-- id: 19 -->
+- [ ] Secondary Pages <!-- id: 20 -->
+    - [ ] Implement About Us page <!-- id: 21 -->
+    - [ ] Implement Services page <!-- id: 22 -->
+    - [ ] Implement Contact Us page <!-- id: 23 -->
+    - [ ] Implement 404 page <!-- id: 24 -->
+- [ ] Final Polish & SEO <!-- id: 25 -->
+    - [ ] Add AOS animations to all sections <!-- id: 26 -->
+    - [ ] Implement SEO meta tags and Schema.org markup <!-- id: 27 -->
+    - [ ] Final mobile responsiveness check <!-- id: 28 -->
+    - [ ] Performance optimization (Lighthouse check) <!-- id: 29 -->
+- [ ] Deployment Configuration <!-- id: 30 -->
+    - [ ] Create `netlify.toml` and SEO files (`robots.txt`, `sitemap.xml`) <!-- id: 31 -->

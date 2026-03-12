@@ -1,0 +1,52 @@
+# tweNova Digital Solutions Agency - Robots.txt
+# Website: twenova.com
+# Updated: 2026-03-10
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.twenova.com/sitemap.xml
+
+# Disallow access to specific directories
+Disallow: /assets/
+Disallow: /document/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Allow crawling of main pages
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /portfolio.html
+Allow: /blog.html
+Allow: /careers.html
+Allow: /contact.html
+
+# Disallow old/backup files
+Disallow: /*-old.html
+Disallow: /*-backup.html
+Disallow: /*-new.html
+
+# Crawl delay (optional)
+# Crawl-delay: 10
+
+# Search Engine Specific
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10
