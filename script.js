@@ -23,42 +23,85 @@ document.addEventListener('DOMContentLoaded', function() {
     initTechTabs();
 
     // Case Study Swiper Initialization
-    new Swiper(".caseStudySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".cs-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            1024: {
-                spaceBetween: 50,
+    if (document.querySelector('.caseStudySwiper')) {
+        new Swiper(".caseStudySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: false,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".cs-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            observer: true,
+            observeParents: true,
+            breakpoints: {
+                1024: {
+                    spaceBetween: 50,
+                }
             }
-        }
-    });
+        });
+    }
 
-    // Hero Image Slider Initialization
-    new Swiper(".heroSwiper", {
-        effect: "fade",
-        fadeEffect: {
-            crossFade: true
-        },
-        loop: false, // Changed to false to avoid warning with few slides
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        speed: 1500,
-    });
+    // Hero Image Slider Initialization (single instance only)
+    // Defer until images are loaded to prevent Swiper calculating garbage dimensions
+    var heroEl = document.querySelector('.heroSwiper');
+    if (heroEl) {
+        var heroImages = heroEl.querySelectorAll('img');
+        var loaded = 0;
+        var total = heroImages.length;
+
+        function initHeroSwiper() {
+            new Swiper(".heroSwiper", {
+                effect: "fade",
+                fadeEffect: {
+                    crossFade: true
+                },
+                loop: false,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                speed: 1500,
+                observer: true,
+                observeParents: true,
+            });
+        }
+
+        if (total === 0) {
+            initHeroSwiper();
+        } else {
+            heroImages.forEach(function(img) {
+                if (img.complete && img.naturalWidth > 0) {
+                    loaded++;
+                } else {
+                    img.addEventListener('load', function() {
+                        loaded++;
+                        if (loaded >= total) initHeroSwiper();
+                    });
+                    img.addEventListener('error', function() {
+                        loaded++;
+                        if (loaded >= total) initHeroSwiper();
+                    });
+                }
+            });
+            // If all images were already cached / complete
+            if (loaded >= total) {
+                initHeroSwiper();
+            }
+            // Safety fallback: init after 3s max regardless
+            setTimeout(function() {
+                if (!heroEl.swiper) initHeroSwiper();
+            }, 3000);
+        }
+    }
 
     // Fact Counter Animation
     initFactCounters();
@@ -454,31 +497,12 @@ function initCounters() {
 // Initialize Sliders
 // =====================
 function initSliders() {
-    // Hero Slider
-    if (typeof Swiper !== 'undefined' && document.querySelector('.heroSwiper')) {
-        new Swiper('.heroSwiper', {
-            loop: true,
-            effect: 'fade',
-            speed: 1000,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    }
+    // Hero Slider is initialized in DOMContentLoaded (above) — do NOT duplicate here
 
     // Testimonial Slider
     if (typeof Swiper !== 'undefined' && document.querySelector('.testimonialSwiper')) {
         new Swiper('.testimonialSwiper', {
-            loop: true,
+            loop: false,
             speed: 800,
             autoplay: {
                 delay: 6000,
@@ -487,6 +511,8 @@ function initSliders() {
                 el: '.swiper-pagination',
                 clickable: true,
             },
+            observer: true,
+            observeParents: true,
         });
     }
 }
@@ -535,7 +561,7 @@ function initBackToTop() {
         right: 2rem;
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, #3b82f6, #f97316);
+        background: linear-gradient(135deg, #4A8EC2, #4A8EC2);
         color: white;
         border: none;
         border-radius: 50%;
@@ -735,40 +761,89 @@ document.querySelectorAll('a[href="#"]').forEach(link => {
 // =====================
 console.log(
     '%c👋 Welcome to tweNova Digital Solutions Agency!',
-    'color: #3b82f6; font-size: 20px; font-weight: bold;'
+    'color: #4A8EC2; font-size: 20px; font-weight: bold;'
 );
 console.log(
     '%cMake Together Grow Together 🚀',
-    'color: #f97316; font-size: 14px;'
+    'color: #4A8EC2; font-size: 14px;'
 );
 
 // =====================
 // Mega Menu Handlers
 // =====================
 function initMegaMenu() {
-    const hasMegas = document.querySelectorAll('.has-mega');
-    
-    hasMegas.forEach(hasMega => {
-        const megaMenu = hasMega.querySelector('.mega-menu');
-        if (!megaMenu) return;
-
-        hasMega.addEventListener('mouseenter', () => {
-            megaMenu.style.display = 'grid';
-            setTimeout(() => {
-                megaMenu.style.opacity = '1';
-                megaMenu.style.transform = 'translateX(-50%) translateY(0)';
-            }, 10);
-        });
-
-        hasMega.addEventListener('mouseleave', () => {
-            megaMenu.style.opacity = '0';
-            megaMenu.style.transform = 'translateX(-50%) translateY(20px)';
-            setTimeout(() => {
-                megaMenu.style.display = 'none';
-            }, 400);
-        });
-    });
+    // Mega menu show/hide is handled purely by CSS :hover rules.
+    // No JS toggling needed — avoids display:none race conditions.
 }
+
+// =====================
+// Binary Rain Animation
+// =====================
+(function initBinaryRain() {
+    const canvas = document.getElementById('binaryCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const FONT_SIZE = 14;
+    const CHARS = ['0', '1'];
+    let columns = [];
+    let drops = [];
+    let frame = 0;
+
+    function resize() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        const cols = Math.floor(canvas.width / FONT_SIZE);
+        if (cols !== columns.length) {
+            columns = Array.from({ length: cols }, (_, i) => i);
+            // Start each column drop at a random position from the bottom
+            drops = columns.map(() => Math.floor(Math.random() * (canvas.height / FONT_SIZE)));
+        }
+    }
+
+    function draw() {
+        frame++;
+        // Slow fade trail so characters stay visible longer
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.font = FONT_SIZE + 'px monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+            const char = CHARS[Math.random() < 0.5 ? 0 : 1];
+            const x = i * FONT_SIZE;
+            // y rises from bottom
+            const y = canvas.height - drops[i] * FONT_SIZE;
+
+            // Head glyph: bright white
+            ctx.fillStyle = '#F6F4F1';
+            ctx.fillText(char, x, y);
+
+            // Gradient trail below the head
+            const gradient = ctx.createLinearGradient(x, y, x, y + FONT_SIZE * 6);
+            gradient.addColorStop(0, 'rgba(144,180,212,1.0)');
+            gradient.addColorStop(1, 'rgba(74,142,194,0.0)');
+            ctx.fillStyle = gradient;
+            ctx.fillText(char, x, y + FONT_SIZE);
+
+            // Only advance drops every 3rd frame to slow the rise
+            if (frame % 3 === 0) {
+                drops[i]++;
+            }
+
+            // Reset to bottom when it exits the top
+            if (drops[i] * FONT_SIZE > canvas.height + FONT_SIZE * 20) {
+                if (Math.random() > 0.97) {
+                    drops[i] = 0;
+                }
+            }
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    setInterval(draw, 80);
+})();
 
 // =====================
 // Custom Initialization for external use

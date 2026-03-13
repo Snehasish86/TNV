@@ -8,8 +8,7 @@
     <meta name="author" content="tweNova Digital Solutions Agency">
     <title>tweNova Digital Solutions Agency | Make Together Grow Together</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <!-- Favicon (add favicon.ico to assets/icons/ when available) -->
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +73,7 @@
                     </div>
                 </li>
                 <li class="has-mega">
-                    <a href="#">Hire Developers <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <a href="hire.html">Hire Developers <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu">
                         <div class="mega-banner" style="background-image: url('assets/images/mega-menu-banner.webp');">
                             <div class="mega-banner-content">
@@ -86,28 +85,28 @@
                             <div class="mega-col">
                                 <h4>Hire Web Developers</h4>
                                 <ul class="mega-links">
-                                    <li><a href="#"><i class="fa-solid fa-code"></i> Hire PHP Developers</a></li>
-                                    <li><a href="#"><i class="fa-solid fa-code-branch"></i> Hire Laravel Developers</a></li>
-                                    <li><a href="#"><i class="fa-solid fa-file-code"></i> Hire CodeIgniter Developers</a></li>
-                                    <li><a href="#"><i class="fa-brands fa-node-js"></i> Hire NodeJs Developers</a></li>
+                                    <li><a href="hire-php-developers.html"><i class="fa-solid fa-code"></i> Hire PHP Developers</a></li>
+                                    <li><a href="hire-laravel-developers.html"><i class="fa-solid fa-code-branch"></i> Hire Laravel Developers</a></li>
+                                    <li><a href="hire-codeigniter-developers.html"><i class="fa-solid fa-file-code"></i> Hire CodeIgniter Developers</a></li>
+                                    <li><a href="hire-nodejs-developers.html"><i class="fa-brands fa-node-js"></i> Hire Node.js Developers</a></li>
                                 </ul>
                             </div>
                             <div class="mega-col">
                                 <h4>Hire Mobile Developers</h4>
                                 <ul class="mega-links">
-                                    <li><a href="#"><i class="fa-brands fa-apple"></i> Hire iOS Developers</a></li>
-                                    <li><a href="#"><i class="fa-brands fa-android"></i> Hire Android Developers</a></li>
-                                    <li><a href="#"><i class="fa-solid fa-mobile"></i> Hire Flutter Developers</a></li>
-                                    <li><a href="#"><i class="fa-solid fa-mobile-screen"></i> Hire React Native Developers</a></li>
+                                    <li><a href="hire-ios-developers.html"><i class="fa-brands fa-apple"></i> Hire iOS Developers</a></li>
+                                    <li><a href="hire-android-developers.html"><i class="fa-brands fa-android"></i> Hire Android Developers</a></li>
+                                    <li><a href="hire-flutter-developers.html"><i class="fa-solid fa-mobile"></i> Hire Flutter Developers</a></li>
+                                    <li><a href="hire-react-native-developers.html"><i class="fa-solid fa-mobile-screen"></i> Hire React Native Developers</a></li>
                                 </ul>
                             </div>
                             <div class="mega-col">
                                 <h4>Hire Frontend Developers</h4>
                                 <ul class="mega-links">
-                                    <li><a href="#"><i class="fa-brands fa-angular"></i> Hire Angular Developers</a></li>
-                                    <li><a href="#"><i class="fa-brands fa-react"></i> Hire React JS Developers</a></li>
-                                    <li><a href="#"><i class="fa-brands fa-vuejs"></i> Hire VueJS Developers</a></li>
-                                    <li><a href="#"><i class="fa-brands fa-html5"></i> Hire HTML Developer</a></li>
+                                    <li><a href="hire-angular-developers.html"><i class="fa-brands fa-angular"></i> Hire Angular Developers</a></li>
+                                    <li><a href="hire-reactjs-developers.html"><i class="fa-brands fa-react"></i> Hire React JS Developers</a></li>
+                                    <li><a href="hire-vuejs-developers.html"><i class="fa-brands fa-vuejs"></i> Hire Vue.js Developers</a></li>
+                                    <li><a href="hire-html-developers.html"><i class="fa-brands fa-html5"></i> Hire HTML Developers</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -126,10 +125,28 @@
         </nav>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">twe<span>Nova</span></a>
+            <button class="close-menu" aria-label="Close Menu">&times;</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Partner With Us</a></li>
+            <li><a href="careers.html">Career</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </div>
+
     <!-- Main Content -->
     <main>
         <!-- High-Fidelity Hero Section -->
         <section class="hero-v2">
+            <canvas id="binaryCanvas"></canvas>
             <div class="hero-v2-bg"></div>
             <div class="container">
                 <div class="hero-v2-grid">
@@ -192,11 +209,11 @@
                                 </div>
                                 <div class="hero-mini-stat">
                                     <span class="mini-stat-label">Uptime</span>
-                                    <span class="mini-stat-val" style="color:#10b981;">99.9%</span>
+                                    <span class="mini-stat-val" style="color:#4A8EC2;">99.9%</span>
                                 </div>
                                 <div class="hero-mini-stat">
                                     <span class="mini-stat-label">Response</span>
-                                    <span class="mini-stat-val" style="color:#6366f1;">45ms</span>
+                                    <span class="mini-stat-val" style="color:#4A8EC2;">45ms</span>
                                 </div>
                             </div>
                         </div>
@@ -210,18 +227,22 @@
             <div class="container">
                 <div class="hero-v2-bottom-grid">
                     <div class="bottom-stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bottom-stat-icon"><i class="fa-solid fa-rocket"></i></div>
                         <h4 class="stat-number">50+</h4>
                         <p>Projects Delivered</p>
                     </div>
                     <div class="bottom-stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bottom-stat-icon"><i class="fa-solid fa-handshake"></i></div>
                         <h4 class="stat-number">30+</h4>
                         <p>Happy Clients</p>
                     </div>
                     <div class="bottom-stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bottom-stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
                         <h4 class="stat-number">4-5</h4>
                         <p>Years Experience</p>
                     </div>
                     <div class="bottom-stat-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bottom-stat-icon"><i class="fa-solid fa-star"></i></div>
                         <h4 class="stat-number">99%</h4>
                         <p>Client Satisfaction</p>
                     </div>
@@ -328,57 +349,12 @@
             </div>
         </section>
 
-        <!-- ============================================ -->
-        <!-- SECTION 4: Facts & Figures Section          -->
-        <!-- ============================================ -->
-        <section class="fact-figure-section">
-            <div class="fact-figure-bg"></div>
-            <div class="container">
-                <div class="section-header" data-aos="fade-up" style="text-align:center; margin-bottom: 70px;">
-                    <h2 class="section-title" style="color:#fff;">Numbers That <span>Tell Our Story</span></h2>
-                    <p class="section-desc" style="color:rgba(255,255,255,0.7);">Four years of dedicated work, measurable impact, and clear client love.</p>
-                </div>
-                <div class="fact-figure-grid">
-                    <div class="fact-figure-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="fact-icon"><i class="fa-solid fa-rocket"></i></div>
-                        <div class="fact-counter" data-target="50">0</div>
-                        <div class="fact-plus">+</div>
-                        <p class="fact-label">Projects Delivered</p>
-                    </div>
-                    <div class="fact-figure-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="fact-icon"><i class="fa-solid fa-handshake"></i></div>
-                        <div class="fact-counter" data-target="30">0</div>
-                        <div class="fact-plus">+</div>
-                        <p class="fact-label">Happy Clients</p>
-                    </div>
-                    <div class="fact-figure-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="fact-icon"><i class="fa-solid fa-code-branch"></i></div>
-                        <div class="fact-counter" data-target="120">0</div>
-                        <div class="fact-plus">K+</div>
-                        <p class="fact-label">Lines of Code Written</p>
-                    </div>
-                    <div class="fact-figure-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="fact-icon"><i class="fa-solid fa-star"></i></div>
-                        <div class="fact-counter" data-target="99">0</div>
-                        <div class="fact-plus">%</div>
-                        <p class="fact-label">Client Satisfaction</p>
-                    </div>
-                    <div class="fact-figure-item" data-aos="fade-up" data-aos-delay="500">
-                        <div class="fact-icon"><i class="fa-solid fa-globe"></i></div>
-                        <div class="fact-counter" data-target="12">0</div>
-                        <div class="fact-plus">+</div>
-                        <p class="fact-label">Countries Served</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- High-Fidelity Expertise Section -->
         <section class="expertise-section">
             <div class="container">
                 <div class="section-header" data-aos="fade-up" style="max-width: 800px; margin-bottom: 60px;">
                     <h2 class="section-title" style="font-size: 3rem; margin-bottom: 20px;">Our <span>Expertise</span></h2>
-                    <p class="section-desc" style="font-size: 1.1rem; color: #ccc; line-height: 1.8;">
+                    <p class="section-desc" style="font-size: 1.1rem; color: #F6F4F1; line-height: 1.8;">
                         At <span style="color:var(--color-orange); font-weight:600;">tweNova</span>, we transform your business with our tested and cutting-edge corporate and consumer solutions. As a leading <span style="color:var(--color-orange);">digital solutions company</span>, our expertise lies in developing custom software solutions that cater to the specific needs of our clients.
                     </p>
                 </div>
@@ -652,22 +628,88 @@
             </div>
         </section>
 
-        <!-- Hire Dedicated Developer Section -->
+        <!-- ============================================ -->
+        <!-- Hire Dedicated Developer Section (Redesigned) -->
+        <!-- ============================================ -->
         <section class="hire-dedicated-section">
+            <div class="hire-bg-glow"></div>
             <div class="container">
+                <!-- Top Row: Content + Visual -->
                 <div class="hire-grid">
                     <div class="hire-content" data-aos="fade-right">
-                        <h2 class="section-title" style="color:#fff;">Hire Dedicated <span>Developers</span></h2>
-                        <p style="color:#ccc; font-size:1.1rem; margin-bottom:30px;">
-                            We will bring the expertise and specialization your business needs to build and perform with ease in a competitive environment. From using the best Blockchain, Frontend, Backend, Web, Mobility, Data Analytics, UI/UX technologies, and practices, we make your solutions click and engagement worthy.
-                        </p>
-                        <a href="contact.html" class="btn btn-primary btn-lg">HIRE DEVELOPER <i class="fa-solid fa-arrow-right" style="margin-left:10px;"></i></a>
+                        <span class="hire-tag"><i class="fa-solid fa-users-gear"></i> Hire Developers</span>
+                        <h2 class="hire-heading">Build Your Dream Team with <span>Dedicated Developers</span></h2>
+                        <p class="hire-desc">We bring the expertise and specialization your business needs to build and perform with ease in a competitive environment. From Blockchain to AI, Frontend to Cloud — we make your solutions click and engagement worthy.</p>
+
+                        <div class="hire-dev-roles">
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-php"></i> PHP</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-laravel"></i> Laravel</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-node-js"></i> Node.js</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-react"></i> React</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-angular"></i> Angular</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-vuejs"></i> Vue.js</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-apple"></i> iOS</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-android"></i> Android</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-solid fa-mobile"></i> Flutter</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-react"></i> React Native</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-shopify"></i> Shopify</a>
+                            <a href="contact.html" class="hire-role-pill"><i class="fa-brands fa-python"></i> Python</a>
+                        </div>
+
+                        <div class="hire-cta-btns">
+                            <a href="contact.html" class="btn btn-primary btn-lg">Hire Developer <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="contact.html" class="btn btn-outline-light btn-lg">Explore Our Offer <i class="fa-solid fa-external-link-alt"></i></a>
+                        </div>
                     </div>
-                    <div class="hire-image-wrapper" data-aos="fade-left">
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800" alt="Hire Developers">
-                        <div class="hire-badge">
-                            <span style="font-size:1.5rem;">100%</span>
-                            <span style="font-size:0.7rem;">DEDICATED</span>
+
+                    <div class="hire-visual" data-aos="fade-left">
+                        <div class="hire-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800" alt="Hire Developers at tweNova">
+                            <div class="hire-img-overlay"></div>
+                        </div>
+                        <div class="hire-float-badge hire-badge-top">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div>
+                                <strong>100%</strong>
+                                <span>Dedicated Resources</span>
+                            </div>
+                        </div>
+                        <div class="hire-float-badge hire-badge-bottom">
+                            <i class="fa-solid fa-bolt"></i>
+                            <div>
+                                <strong>2x Faster</strong>
+                                <span>Time to Market</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: Meet Our Leaders -->
+                <div class="hire-leaders" data-aos="fade-up">
+                    <div class="hire-leaders-header">
+                        <h3>Let's Meet & Talk</h3>
+                        <p>Want to discuss your project? Meet the people who make it happen.</p>
+                    </div>
+                    <div class="hire-leaders-grid">
+                        <div class="hire-leader-card">
+                            <div class="leader-avatar">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80" alt="CEO">
+                            </div>
+                            <div class="leader-info">
+                                <h4>Hire Developer</h4>
+                                <p>Skilled developers experienced in diverse technologies, delivering high-quality solutions tailored to your needs.</p>
+                                <a href="contact.html" class="hire-leader-link">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="hire-leader-card">
+                            <div class="leader-avatar">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&q=80" alt="Director">
+                            </div>
+                            <div class="leader-info">
+                                <h4>Partner With Us</h4>
+                                <p>Expand your team with prompt development and digital marketing solutions aligned with your business goals.</p>
+                                <a href="contact.html" class="hire-leader-link">Let's Connect <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -675,12 +717,12 @@
         </section>
 
         <!-- About tweNova & Stats -->
-        <section class="section about-stats-section" style="background:#fff; color:#000;">
+        <section class="section about-stats-section" style="background:#F6F4F1; color:#000;">
             <div class="container">
-                <div class="about-intro-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:60px; margin-bottom:80px; align-items:center;">
+                <div class="about-intro-grid">
                     <div class="about-text" data-aos="fade-right">
                         <h2 class="section-title">About <span>tweNova</span></h2>
-                        <p style="color:#444;">
+                        <p style="color:#4A4540;">
                             tweNova started with the vision to craft 360-degree digital solutions using the best IT and marketing professionals and creative storytelling to help you grow your business. Commenced in 2016, we are providing digital solutions to startups, businesses, and enterprises according to their niche requirements, with a growing list of satisfied clients nationally and internationally.
                         </p>
                         <a href="about.html" class="btn btn-outline-dark" style="margin-top:20px;">EXPLORE <i class="fa-solid fa-arrow-right" style="margin-left:10px;"></i></a>
@@ -713,29 +755,29 @@
             <div class="container">
                 <div class="section-header text-center" data-aos="fade-up">
                     <h2 class="section-title">Getting you from <span>vision to reality</span></h2>
-                    <p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">We listen, advise, design and deliver world-class, user-friendly IT products for clients in an agile way. How? Through our project experience and collective knowledge, we have established our way of bringing value to our clients.</p>
+                    <p class="section-subtitle" style="max-width: 800px; margin: 0 auto; color: #F6F4F1;">We listen, advise, design and deliver world-class, user-friendly IT products for clients in an agile way. How? Through our project experience and collective knowledge, we have established our way of bringing value to our clients.</p>
                 </div>
 
                 <div class="process-steps">
                     <div class="process-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="process-number">01</div>
                         <h3>Strategic Analysis</h3>
-                        <p style="color:#aaa;">Result: a set of recommendations leading to a high-level solution plan</p>
+                        <p style="color:#F6F4F1;">Result: a set of recommendations leading to a high-level solution plan</p>
                     </div>
                     <div class="process-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="process-number">02</div>
                         <h3>Planning & Design</h3>
-                        <p style="color:#aaa;">Result: a product development plan</p>
+                        <p style="color:#F6F4F1;">Result: a product development plan</p>
                     </div>
                     <div class="process-item" data-aos="fade-up" data-aos-delay="300">
                         <div class="process-number">03</div>
                         <h3>Solution Delivery</h3>
-                        <p style="color:#aaa;">Result: a market-ready product made with users in mind</p>
+                        <p style="color:#F6F4F1;">Result: a market-ready product made with users in mind</p>
                     </div>
                     <div class="process-item" data-aos="fade-up" data-aos-delay="400">
                         <div class="process-number">04</div>
                         <h3>Managing & Innovating</h3>
-                        <p style="color:#aaa;">Result: an approach of constant innovation for your organisation's agility</p>
+                        <p style="color:#F6F4F1;">Result: an approach of constant innovation for your organisation's agility</p>
                     </div>
                 </div>
             </div>
@@ -771,7 +813,7 @@
         <!-- Our Latest Blog -->
         <section class="blog-section">
             <div class="container">
-                <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:60px;">
+                <div class="section-header blog-section-header">
                     <h2 class="section-title" style="margin:0;">Our <span>Latest Blog</span></h2>
                     <a href="blog.html" class="btn btn-primary">VIEW OUR ALL BLOGS <i class="fa-solid fa-arrow-right" style="margin-left:10px;"></i></a>
                 </div>
@@ -784,7 +826,7 @@
                         <div class="blog-content">
                             <span class="blog-date">March 11, 2026</span>
                             <h3>The Role of AI in Digital Marketing: Smarter Campaigns</h3>
-                            <p style="color:#666; font-size:0.9rem; margin-top:15px;">Digital marketing has evolved. Customers expect personalized experiences across all channels...</p>
+                            <p style="color:#7A6E63; font-size:0.9rem; margin-top:15px;">Digital marketing has evolved. Customers expect personalized experiences across all channels...</p>
                         </div>
                     </div>
                     <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
@@ -794,7 +836,7 @@
                         <div class="blog-content">
                             <span class="blog-date">March 10, 2026</span>
                             <h3>How to Choose the Right Tech Stack for Your Startup</h3>
-                            <p style="color:#666; font-size:0.9rem; margin-top:15px;">Selecting the right technology stack is one of the most critical decisions for any new business...</p>
+                            <p style="color:#7A6E63; font-size:0.9rem; margin-top:15px;">Selecting the right technology stack is one of the most critical decisions for any new business...</p>
                         </div>
                     </div>
                     <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
@@ -804,7 +846,7 @@
                         <div class="blog-content">
                             <span class="blog-date">March 09, 2026</span>
                             <h3>Top 10 Web Design Trends to Watch in 2026</h3>
-                            <p style="color:#666; font-size:0.9rem; margin-top:15px;">Stay ahead of the competition with these cutting-edge design trends that are shaping the web...</p>
+                            <p style="color:#7A6E63; font-size:0.9rem; margin-top:15px;">Stay ahead of the competition with these cutting-edge design trends that are shaping the web...</p>
                         </div>
                     </div>
                 </div>
@@ -817,7 +859,7 @@
         <div class="container footer-grid">
             <div class="footer-col" data-aos="fade-up">
                 <a href="index.html" class="logo">twe<span>Nova</span></a>
-                <p style="margin-top:20px; color:#aaa; font-size:14px; line-height:1.8;">
+                <p style="margin-top:20px; color:#F6F4F1; font-size:14px; line-height:1.8;">
                     Leading digital agency focused on building next-gen technological solutions for businesses worldwide. We transform ideas into digital reality.
                 </p>
                 <div class="footer-social" style="margin-top:25px; display:flex; gap:15px;">
@@ -827,7 +869,7 @@
                 </div>
             </div>
             <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="color:#fff; margin-bottom:25px;">Quick Links</h4>
+                <h4 style="color:#F6F4F1; margin-bottom:25px;">Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -836,7 +878,7 @@
                 </ul>
             </div>
             <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
-                <h4 style="color:#fff; margin-bottom:25px;">Services</h4>
+                <h4 style="color:#F6F4F1; margin-bottom:25px;">Services</h4>
                 <ul class="footer-links">
                     <li><a href="#">Web Development</a></li>
                     <li><a href="#">Mobile App Development</a></li>
@@ -845,15 +887,15 @@
                 </ul>
             </div>
             <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
-                <h4 style="color:#fff; margin-bottom:25px;">Contact Info</h4>
-                <ul class="footer-contact-info" style="list-style:none; color:#aaa; font-size:14px;">
+                <h4 style="color:#F6F4F1; margin-bottom:25px;">Contact Info</h4>
+                <ul class="footer-contact-info" style="list-style:none; color:#F6F4F1; font-size:14px;">
                     <li style="margin-bottom:15px;"><i class="fa-solid fa-location-dot" style="color:var(--color-orange); margin-right:10px;"></i> 123 Tech Avenue, India</li>
                     <li style="margin-bottom:15px;"><i class="fa-solid fa-envelope" style="color:var(--color-orange); margin-right:10px;"></i> contact@twenova.com</li>
                     <li style="margin-bottom:15px;"><i class="fa-solid fa-phone" style="color:var(--color-orange); margin-right:10px;"></i> +1 234 567 890</li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom text-center" style="margin-top:80px; padding:30px 0; border-top:1px solid #222; color:#555; font-size:13px;">
+        <div class="footer-bottom text-center">
             <p>&copy; 2024 tweNova Digital Solutions. All Rights Reserved.</p>
         </div>
     </footer>
@@ -862,19 +904,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({ duration: 1000, once: true });
-            
-            new Swiper(".heroSwiper", {
-                loop: true,
-                autoplay: { delay: 5000 },
-                pagination: { el: ".swiper-pagination", clickable: true },
-                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-                effect: 'fade',
-                fadeEffect: { crossFade: true }
-            });
-        });
-    </script>
+    <!-- AOS and Swiper are initialized in script.js -->
 </body>
 </html>
