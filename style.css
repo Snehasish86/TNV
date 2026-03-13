@@ -996,10 +996,11 @@ header.scrolled {
 }
 
 .hire-cta-left h2 span {
-  background: linear-gradient(90deg, #4A8EC2, #4A8EC2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  color: #F6F4F1;
 }
 
 .hire-cta-left p {
@@ -2757,10 +2758,42 @@ body.theme-dark .mega-links a:hover {
 
 .hero-v2-title span {
   display: block;
-  background: linear-gradient(90deg, #4A8EC2, #4A8EC2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  color: #F6F4F1;
+}
+
+.hero-v2-title .hero-brand-line,
+.hero-v2-title span.hero-brand-line {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+.hero-v2-title .hero-brand-with,
+.hero-v2-title .hero-brand-twe,
+.hero-v2-title .hero-brand-nova {
+  display: inline;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+.hero-v2-title .hero-brand-with {
+  color: #4A8EC2;
+  -webkit-text-fill-color: #4A8EC2;
+}
+
+.hero-v2-title .hero-brand-twe {
+  color: #F6F4F1;
+  -webkit-text-fill-color: #F6F4F1;
+}
+
+.hero-v2-title .hero-brand-nova {
+  color: #4A8EC2;
+  -webkit-text-fill-color: #4A8EC2;
 }
 
 .hero-v2-desc {
@@ -2845,7 +2878,11 @@ body.theme-dark .mega-links a:hover {
   width: 100%;
   max-width: 900px;
   margin-left: auto;
-  overflow: hidden;
+  overflow: visible;
+}
+
+.hero-media-shell {
+  position: relative;
 }
 
 .heroSwiper {
@@ -2884,8 +2921,8 @@ body.theme-dark .mega-links a:hover {
 /* Floating Notification */
 .floating-notif {
   position: absolute;
-  bottom: -30px;
-  left: -40px;
+  left: 24px;
+  bottom: 24px;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2896,6 +2933,7 @@ body.theme-dark .mega-links a:hover {
   gap: 15px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   z-index: 10;
+  max-width: min(320px, calc(100% - 48px));
 }
 
 .notif-icon {
@@ -3151,10 +3189,11 @@ body.theme-dark .mega-links a:hover {
   }
 
   .floating-notif {
-    left: 10px;
-    bottom: -20px;
+    left: 18px;
+    bottom: 18px;
     padding: 15px;
     font-size: 0.85rem;
+    max-width: calc(100% - 36px);
   }
 
   .logo-grid {
@@ -3262,6 +3301,7 @@ body.theme-dark .mega-links a:hover {
     transform: none;
     bottom: 0;
     margin-top: 20px;
+    max-width: 100%;
   }
 }
 
