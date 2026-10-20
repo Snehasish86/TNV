@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /document/
-
-Sitemap: https://www.twenova.com/sitemap.xml

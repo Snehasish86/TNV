@@ -1,0 +1,138 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/hire-php-developers.html",
+      "destination": "/hire/php-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-laravel-developers.html",
+      "destination": "/hire/laravel-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-codeigniter-developers.html",
+      "destination": "/hire/codeigniter-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-nodejs-developers.html",
+      "destination": "/hire/nodejs-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-ios-developers.html",
+      "destination": "/hire/ios-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-android-developers.html",
+      "destination": "/hire/android-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-flutter-developers.html",
+      "destination": "/hire/flutter-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-react-native-developers.html",
+      "destination": "/hire/react-native-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-reactjs-developers.html",
+      "destination": "/hire/reactjs-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-angular-developers.html",
+      "destination": "/hire/angular-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-vuejs-developers.html",
+      "destination": "/hire/vuejs-developers",
+      "permanent": true
+    },
+    {
+      "source": "/hire-html-developers.html",
+      "destination": "/hire/html-developers",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/hire.html",
+      "destination": "/hire",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio.html",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/careers.html",
+      "destination": "/careers",
+      "permanent": true
+    },
+    {
+      "source": "/blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    }
+  ]
+}
