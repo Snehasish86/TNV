@@ -4,106 +4,236 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false,
+  "trailingSlash": true,
   "redirects": [
     {
       "source": "/hire-php-developers.html",
-      "destination": "/hire/php-developers",
+      "destination": "/hire/php-developers/",
       "permanent": true
     },
     {
       "source": "/hire-laravel-developers.html",
-      "destination": "/hire/laravel-developers",
+      "destination": "/hire/laravel-developers/",
       "permanent": true
     },
     {
       "source": "/hire-codeigniter-developers.html",
-      "destination": "/hire/codeigniter-developers",
+      "destination": "/hire/codeigniter-developers/",
       "permanent": true
     },
     {
       "source": "/hire-nodejs-developers.html",
-      "destination": "/hire/nodejs-developers",
+      "destination": "/hire/nodejs-developers/",
       "permanent": true
     },
     {
       "source": "/hire-ios-developers.html",
-      "destination": "/hire/ios-developers",
+      "destination": "/hire/ios-developers/",
       "permanent": true
     },
     {
       "source": "/hire-android-developers.html",
-      "destination": "/hire/android-developers",
+      "destination": "/hire/android-developers/",
       "permanent": true
     },
     {
       "source": "/hire-flutter-developers.html",
-      "destination": "/hire/flutter-developers",
+      "destination": "/hire/flutter-developers/",
       "permanent": true
     },
     {
       "source": "/hire-react-native-developers.html",
-      "destination": "/hire/react-native-developers",
+      "destination": "/hire/react-native-developers/",
       "permanent": true
     },
     {
       "source": "/hire-reactjs-developers.html",
-      "destination": "/hire/reactjs-developers",
+      "destination": "/hire/reactjs-developers/",
       "permanent": true
     },
     {
       "source": "/hire-angular-developers.html",
-      "destination": "/hire/angular-developers",
+      "destination": "/hire/angular-developers/",
       "permanent": true
     },
     {
       "source": "/hire-vuejs-developers.html",
-      "destination": "/hire/vuejs-developers",
+      "destination": "/hire/vuejs-developers/",
       "permanent": true
     },
     {
       "source": "/hire-html-developers.html",
-      "destination": "/hire/html-developers",
+      "destination": "/hire/html-developers/",
       "permanent": true
     },
     {
       "source": "/about.html",
-      "destination": "/about",
+      "destination": "/about-us/",
       "permanent": true
     },
     {
       "source": "/services.html",
-      "destination": "/services",
+      "destination": "/services/",
       "permanent": true
     },
     {
       "source": "/hire.html",
-      "destination": "/hire",
+      "destination": "/hire/",
       "permanent": true
     },
     {
       "source": "/portfolio.html",
-      "destination": "/portfolio",
+      "destination": "/portfolio/",
       "permanent": true
     },
     {
       "source": "/careers.html",
-      "destination": "/careers",
+      "destination": "/careers/",
       "permanent": true
     },
     {
       "source": "/blog.html",
-      "destination": "/blog",
+      "destination": "/blog/",
       "permanent": true
     },
     {
       "source": "/contact.html",
-      "destination": "/contact",
+      "destination": "/contact/",
       "permanent": true
     },
     {
       "source": "/index.html",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/services/web-development",
+      "destination": "/web-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/web-development/",
+      "destination": "/web-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/mobile-app-development/",
+      "destination": "/mobile-app-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/mobile-app-development",
+      "destination": "/mobile-app-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-ml-development",
+      "destination": "/ai-ml-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-ml-development/",
+      "destination": "/ai-ml-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/blockchain-development",
+      "destination": "/blockchain-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/blockchain-development/",
+      "destination": "/blockchain-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/cloud-devops",
+      "destination": "/cloud-devops/",
+      "permanent": true
+    },
+    {
+      "source": "/services/cloud-devops/",
+      "destination": "/cloud-devops/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ui-ux-design",
+      "destination": "/ui-ux-design/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ui-ux-design/",
+      "destination": "/ui-ux-design/",
+      "permanent": true
+    },
+    {
+      "source": "/services/digital-marketing-seo/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/digital-marketing-seo",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ecommerce-development",
+      "destination": "/ecommerce-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ecommerce-development/",
+      "destination": "/ecommerce-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/security-audit",
+      "destination": "/security-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/services/security-audit/",
+      "destination": "/security-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/services/product-engineering/",
+      "destination": "/saas-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/product-engineering",
+      "destination": "/saas-development/",
+      "permanent": true
+    },
+    {
+      "source": "/product-engineering",
+      "destination": "/saas-development/",
+      "permanent": true
+    },
+    {
+      "source": "/product-engineering/",
+      "destination": "/saas-development/",
+      "permanent": true
+    },
+    {
+      "source": "/digital-marketing-seo",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/digital-marketing-seo/",
+      "destination": "/services/",
       "permanent": true
     }
   ],

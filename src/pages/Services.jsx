@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { Btn, Icon, Kicker, SecHead, Faq, Steps, PageHero, IconCards } from '../components/ui.jsx';
 import { Cta, ProjectCard, AppPhone, CaseCard } from '../components/blocks.jsx';
-import { services, serviceBySlug } from '../data/services.js';
+import { services, serviceBySlug, coreServices } from '../data/services.js';
 import { projects, apps } from '../data/site.js';
 import NotFound from './NotFound.jsx';
 import { cases } from '../data/cases.js';
@@ -14,20 +14,32 @@ const INDUSTRIES = [['cap', 'Education', 'Admissions, e-learning and school ERP.
 export function ServicesHub() {
   return (
     <>
-      <PageHero crumbs={[['Home', '/'], ['Services', '/services']]} icon="layers"
+      <PageHero crumbs={[['Home', '/'], ['Services', '/services/']]} icon="layers"
         title={<>Turning ideas into <span className="text-sky-nova">products that perform</span></>}
         lede="End-to-end digital services that help businesses build, grow and lead. Pick one, or bring us the whole product.">
-        <Btn to="/contact" variant="cream">Start a project</Btn>
+        <Btn to="/contact/" variant="cream">Start a project</Btn>
         <Btn to="#all" variant="ghost" icon={false}>Explore services</Btn>
       </PageHero>
       <section className="sec" id="all" aria-labelledby="all-title">
         <div className="wrap">
-          <SecHead kicker="Our expertise" title="Nine ways we help you grow" sub="Each service has its own team, process and page. Open one to see exactly what is included." id="all-title" />
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((s, i) => (
+          <SecHead kicker="Core services" title="What Twenova builds" sub="Our four core service lines. Open one to see what is included, how we work and common questions." id="all-title" />
+          <div className="grid gap-5 md:grid-cols-2">
+            {coreServices.map((s, i) => (
               <article key={s.slug} data-rv style={{ '--d': `${(i % 3) * 0.07}s` }} className="card group flex flex-col">
                 <span className="ico"><Icon name={s.icon} /></span>
-                <h3 className="mt-8 text-xl font-medium"><Link to={`/services/${s.slug}`} className="stretched">{s.name}</Link></h3>
+                <h3 className="mt-8 text-xl font-medium"><Link to={`/${s.slug}/`} className="stretched">{s.name}</Link></h3>
+                <p className="mt-3 text-[.97rem] text-ink-soft">{s.short}</p>
+                <ul className="mt-5 flex flex-wrap gap-1.5">{s.offerings.slice(0, 3).map(([, t]) => <li key={t} className="chip !px-3 !py-1.5 !text-xs text-ink-soft">{t}</li>)}</ul>
+                <span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-nova transition-transform duration-500 ease-out group-hover:translate-x-1">View service <Icon name="arrow" className="h-4 w-4" /></span>
+              </article>
+            ))}
+          </div>
+          <h2 className="mt-24 text-[clamp(1.5rem,2.6vw,2rem)] font-semibold tracking-[-0.02em]" data-rv>More services</h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {services.filter((x) => !x.core).map((s, i) => (
+              <article key={s.slug} data-rv style={{ '--d': `${(i % 3) * 0.07}s` }} className="card group flex flex-col">
+                <span className="ico"><Icon name={s.icon} /></span>
+                <h3 className="mt-8 text-xl font-medium"><Link to={`/${s.slug}/`} className="stretched">{s.name}</Link></h3>
                 <p className="mt-3 text-[.97rem] text-ink-soft">{s.short}</p>
                 <ul className="mt-5 flex flex-wrap gap-1.5">{s.offerings.slice(0, 3).map(([, t]) => <li key={t} className="chip !px-3 !py-1.5 !text-xs text-ink-soft">{t}</li>)}</ul>
                 <span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-nova transition-transform duration-500 ease-out group-hover:translate-x-1">View service <Icon name="arrow" className="h-4 w-4" /></span>
@@ -57,11 +69,11 @@ export function ServiceDetail() {
   const appWork = apps.filter((a) => s.work.includes(a.name));
   const caseList = cases.filter((c) => (s.cases || []).includes(c.slug));
   const related = services.filter((x) => x.slug !== s.slug).slice(0, 3);
-  const preset = { 'web-development': 'New website', 'mobile-app-development': 'Mobile app', 'ai-ml-development': 'AI solution', 'ui-ux-design': 'UI/UX design', 'digital-marketing-seo': 'SEO & marketing', 'ecommerce-development': 'E-commerce store', 'security-audit': 'Security audit' }[s.slug] || 'Custom software';
+  const preset = { 'web-development': 'New website', 'mobile-app-development': 'Mobile app', 'ai-ml-development': 'AI solution', 'ui-ux-design': 'UI/UX design', 'pr-campaigns': 'PR campaign', 'branding-logo-design': 'Branding & logo', 'ecommerce-development': 'E-commerce store', 'security-audit': 'Security audit' }[s.slug] || 'Custom software';
 
   return (
     <>
-      <PageHero crumbs={[['Home', '/'], ['Services', '/services'], [s.name, `/services/${s.slug}`]]} icon={s.icon} title={s.title} lede={s.lede} tags={s.tech.slice(0, 6)}>
+      <PageHero crumbs={[['Home', '/'], ['Services', '/services/'], [s.name, `/${s.slug}/`]]} icon={s.icon} title={s.title} lede={s.lede} tags={s.tech.slice(0, 6)}>
         <Btn to="#start" variant="cream">Get a free quote</Btn>
         <Btn to="#offer" variant="ghost" icon={false}>What’s included</Btn>
       </PageHero>
@@ -82,7 +94,7 @@ export function ServiceDetail() {
 
       <section className="sec" aria-labelledby="ben-title">
         <div className="wrap">
-          <SecHead kicker="Why tweNova" title="What you can expect" id="ben-title" />
+          <SecHead kicker="Why Twenova" title="What you can expect" id="ben-title" />
           <div className="grid gap-px overflow-hidden rounded-3xl bg-nova/15 sm:grid-cols-2">
             {s.benefits.map(([t, d], i) => (
               <div key={t} data-rv style={{ '--d': `${(i % 2) * 0.08}s` }} className="bg-cream p-8 sm:p-10">
@@ -136,7 +148,7 @@ export function ServiceDetail() {
       <section className="sec" aria-labelledby="rel-title">
         <div className="wrap">
           <SecHead kicker="Related services" title="You might also need" id="rel-title" />
-          <IconCards items={related.map((x) => [x.icon, x.name, x.short, `/services/${x.slug}`])} />
+          <IconCards items={related.map((x) => [x.icon, x.name, x.short, `/${x.slug}/`])} />
         </div>
       </section>
 

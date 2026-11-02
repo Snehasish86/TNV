@@ -16,7 +16,7 @@ export default function NotFound() {
         <p className="hero-in mx-auto mb-9 mt-6 max-w-[40ch] text-lg text-mist" style={{ '--d': '.1s' }}>We could not find that page. It may have moved, or the link may be wrong.</p>
         <div className="hero-in flex flex-wrap justify-center gap-3" style={{ '--d': '.2s' }}>
           <Btn to="/" variant="cream">Back to home</Btn>
-          <Btn to="/contact" variant="ghost" icon={false}>Contact us</Btn>
+          <Btn to="/contact/" variant="ghost" icon={false}>Contact us</Btn>
         </div>
       </div>
     </section>

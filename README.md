@@ -1,4 +1,6 @@
-# tweNova website (React + Tailwind)
+# Twenova website (React + Tailwind)
+
+See **SEO-HANDOVER.md** for the SEO + GEO changes, URL map, redirects and the owner TODO list.
 
 React 18, Vite 5, Tailwind CSS 3 and React Router 6. Every page is prerendered to static HTML at build time, so search engines get full content and the site loads fast on Vercel.
 

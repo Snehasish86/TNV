@@ -8,7 +8,7 @@ export const roles = [
   "group": "Web",
   "short": "Custom web apps, CMS and APIs with modern PHP.",
   "icon": "code",
-  "intro": "Build robust, scalable web applications with our expert PHP developers. From custom CMS platforms and RESTful APIs to enterprise-grade portals — our PHP specialists deliver production-ready code that powers your business forward.",
+  "intro": "Build robust, scalable web applications with our PHP developers. From custom CMS platforms and RESTful APIs to enterprise-grade portals — our PHP specialists deliver production-ready code that powers your business forward.",
   "tags": [
    "PHP 8.x",
    "WordPress",
@@ -52,8 +52,8 @@ export const roles = [
   "why": [
    [
     "shield",
-    "Pre-Vetted Senior Talent",
-    "Every PHP developer goes through a rigorous 5-stage screening — technical tests, code reviews, and live architecture challenges."
+    "Reviewed, Experienced Developers",
+    "Every PHP developer goes through a technical review before joining your project."
    ],
    [
     "layers",
@@ -68,7 +68,7 @@ export const roles = [
    [
     "rocket",
     "Quick Ramp-Up",
-    "Get a dedicated PHP developer onboarded and productive within 48 hours — no lengthy recruitment cycles."
+    "Get a dedicated PHP developer onboarded quickly, without a long recruitment cycle."
    ]
   ]
  },
@@ -80,7 +80,7 @@ export const roles = [
   "group": "Web",
   "short": "Scalable apps on the Laravel framework.",
   "icon": "layers",
-  "intro": "Leverage the elegance and power of Laravel with our expert developers. From SaaS platforms and multi-tenant apps to real-time dashboards — our Laravel specialists architect scalable solutions that grow with your business.",
+  "intro": "Leverage the elegance and power of Laravel with our developers. From SaaS platforms and multi-tenant apps to real-time dashboards — our Laravel specialists architect scalable solutions that grow with your business.",
   "tags": [
    "Laravel 11",
    "Livewire",
@@ -124,7 +124,7 @@ export const roles = [
   "why": [
    [
     "shield",
-    "Laravel Certified Experts",
+    "Laravel Specialists",
     "Our developers are deeply versed in Laravel's ecosystem — from Eloquent and Blade to Horizon, Telescope, and Vapor."
    ],
    [
@@ -134,13 +134,13 @@ export const roles = [
    ],
    [
     "chat",
-    "CI/CD Pipeline Experts",
-    "Automated deployments with GitHub Actions, Laravel Forge, and Envoyer for zero-downtime production releases."
+    "CI/CD Pipelines",
+    "Automated deployments with GitHub Actions, Laravel Forge, and Envoyer for smooth production releases."
    ],
    [
     "rocket",
     "Scalable Architecture",
-    "Microservices, event sourcing, and CQRS patterns — we build Laravel apps that handle millions of requests."
+    "Microservices, event sourcing, and CQRS patterns — we build Laravel apps that are built to scale."
    ]
   ]
  },
@@ -224,7 +224,7 @@ export const roles = [
   "group": "Web",
   "short": "High-performance, real-time server apps.",
   "icon": "db",
-  "intro": "Build blazing-fast, event-driven applications with our expert Node.js developers. From real-time chat platforms and streaming services to scalable microservices — our team delivers high-throughput solutions that handle millions of concurrent connections.",
+  "intro": "Build blazing-fast, event-driven applications with our Node.js developers. From real-time chat platforms and streaming services to scalable microservices — our team delivers high-throughput solutions that are built to handle high traffic.",
   "tags": [
    "Node.js 20+",
    "Express.js",
@@ -273,8 +273,8 @@ export const roles = [
    ],
    [
     "layers",
-    "High-Concurrency Experts",
-    "Architecting systems that handle 100K+ concurrent connections with event loops, clustering, and load balancing."
+    "Built for High Traffic",
+    "Event loops, clustering and load balancing so your app stays responsive as traffic grows."
    ],
    [
     "chat",
@@ -296,7 +296,7 @@ export const roles = [
   "group": "Mobile",
   "short": "Native Swift apps for iPhone and iPad.",
   "icon": "mobile",
-  "intro": "Craft pixel-perfect, high-performance native iOS applications with our Swift experts. From consumer apps and enterprise solutions to Apple Watch and Apple TV — we build experiences that users love and the App Store features.",
+  "intro": "Craft pixel-perfect, high-performance native iOS applications with our Swift developers. From consumer apps and enterprise solutions to Apple Watch and Apple TV — we build experiences that users love and the App Store features.",
   "tags": [
    "Swift 5.9",
    "SwiftUI",
@@ -341,7 +341,7 @@ export const roles = [
    [
     "shield",
     "Apple Ecosystem Mastery",
-    "Deep expertise across iPhone, iPad, Apple Watch, Apple TV, and Vision Pro — unified experiences across all devices."
+    "Experience across iPhone and iPad, and Vision Pro — unified experiences across all devices."
    ],
    [
     "layers",
@@ -351,7 +351,7 @@ export const roles = [
    [
     "chat",
     "SwiftUI + UIKit Hybrid",
-    "Modern SwiftUI for new builds, expert UIKit knowledge for legacy maintenance — we handle both seamlessly."
+    "Modern SwiftUI for new builds, UIKit knowledge for legacy maintenance — we handle both seamlessly."
    ],
    [
     "rocket",
@@ -368,7 +368,7 @@ export const roles = [
   "group": "Mobile",
   "short": "Feature-rich Kotlin apps for Android.",
   "icon": "mobile",
-  "intro": "Build powerful, feature-rich Android applications that reach billions of users worldwide. Our Kotlin and Jetpack Compose experts deliver smooth, Material Design 3 compliant apps for phones, tablets, wearables, and foldables.",
+  "intro": "Build powerful, feature-rich Android applications that reach billions of users worldwide. Our Kotlin and Jetpack Compose developers deliver smooth, Material Design 3 compliant apps for phones, tablets, wearables, and foldables.",
   "tags": [
    "Kotlin",
    "Jetpack Compose",
@@ -800,7 +800,7 @@ export const roles = [
   "group": "Frontend",
   "short": "Pixel-perfect, accessible, SEO-friendly markup.",
   "icon": "pen",
-  "intro": "Craft semantic, accessible, and responsive web interfaces that perform beautifully on every screen. Our HTML experts convert designs into clean code with pixel-perfect precision and web standards compliance.",
+  "intro": "Craft semantic, accessible, and responsive web interfaces that perform beautifully on every screen. Our HTML developers convert designs into clean code with pixel-perfect precision and web standards compliance.",
   "tags": [
    "HTML5",
    "CSS3",

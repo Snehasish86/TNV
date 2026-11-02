@@ -29,10 +29,10 @@ function Plans({ who }) {
 export function HireHub() {
   return (
     <>
-      <PageHero crumbs={[['Home', '/'], ['Hire developers', '/hire']]} icon="users"
+      <PageHero crumbs={[['Home', '/'], ['Hire developers', '/hire/']]} icon="users"
         title={<>Build your dream team with <span className="text-sky-nova">dedicated developers</span></>}
-        lede="One expert or a full product team. Pre-vetted engineers who join your tools, your stand-ups and your roadmap within 48 hours."
-        stats={[['48 hrs', 'To onboard'], ['100%', 'Dedicated to you'], ['3', 'Engagement models']]}>
+        lede="One expert or a full product team. Reviewed developers who join your tools, your stand-ups and your roadmap, on an hourly, monthly or project basis."
+        stats={[['3', 'Engagement models'], ['NDA', 'Before work starts'], ['You', 'Interview and choose']]}>
         <Btn to="#start" variant="cream">Hire now</Btn>
         <Btn to="#roles" variant="ghost" icon={false}>Explore roles</Btn>
       </PageHero>
@@ -42,19 +42,19 @@ export function HireHub() {
           {groups.map((g) => (
             <div key={g} className="mb-14 last:mb-0">
               <h3 className="mb-6 flex items-center gap-4 font-display text-lg font-medium after:h-px after:flex-1 after:bg-nova/15" data-rv>{g} developers</h3>
-              <IconCards items={roles.filter((r) => r.group === g).map((r) => [r.icon, `${r.label} developers`, r.short, `/hire/${r.slug}`])} cols={4} />
+              <IconCards items={roles.filter((r) => r.group === g).map((r) => [r.icon, `${r.label} developers`, r.short, `/hire/${r.slug}/`])} cols={4} />
             </div>
           ))}
         </div>
       </section>
       <section className="sec dark-sec bg-nova-700 text-cream" aria-labelledby="why-title">
         <div className="wrap">
-          <SecHead kicker="Why tweNova" title="Why hire from tweNova?" sub="We provide partners who fit into your workflow, not just CVs." id="why-title" dark />
+          <SecHead kicker="Why Twenova" title="Why hire from Twenova?" sub="We provide partners who fit into your workflow, not just CVs." id="why-title" dark />
           <IconCards items={hireWhy} dark />
         </div>
       </section>
       <Plans />
-      <Steps steps={hireSteps()} title="Simple 4-step hiring process" sub="Get a dedicated developer onboarded in as little as 48 hours." />
+      <Steps steps={hireSteps()} title="Simple 4-step hiring process" sub="Share what you need, interview the shortlist, and start once you are happy." />
       <Faq items={hireFaqs('developer')} title="Hiring developers: FAQ" />
       <Cta preset="Hire developers" title="Ready to scale your development team?" />
     </>
@@ -68,9 +68,9 @@ export function HireDetail() {
   const others = roles.filter((x) => x.slug !== r.slug);
   return (
     <>
-      <PageHero crumbs={[['Home', '/'], ['Hire developers', '/hire'], [r.tech, `/hire/${r.slug}`]]} icon={r.icon}
+      <PageHero crumbs={[['Home', '/'], ['Hire developers', '/hire/'], [r.tech, `/hire/${r.slug}/`]]} icon={r.icon}
         title={<>Hire dedicated <span className="text-sky-nova">{r.tech}</span> developers</>} lede={r.intro} tags={r.tags}
-        stats={[['48 hrs', 'To onboard'], ['5-stage', 'Screening'], ['NDA', 'From day one']]}>
+        stats={[['3', 'Engagement models'], ['NDA', 'Before work starts'], ['You', 'Interview and choose']]}>
         <Btn to="#start" variant="cream">{`Hire ${r.tech} developers`}</Btn>
         <Btn to="#expertise" variant="ghost" icon={false}>View expertise</Btn>
       </PageHero>
@@ -82,7 +82,7 @@ export function HireDetail() {
       </section>
       <section className="sec dark-sec bg-nova-700 text-cream" aria-labelledby="why-title">
         <div className="wrap">
-          <SecHead kicker="Why choose us" title={`Why hire ${r.tech} developers from tweNova?`} sub="Senior, vetted engineers with a transparent process and a quick start." id="why-title" dark />
+          <SecHead kicker="Why choose us" title={`Why hire ${r.tech} developers from Twenova?`} sub="Senior, vetted engineers with a transparent process and a quick start." id="why-title" dark />
           <IconCards items={r.why} cols={2} dark />
         </div>
       </section>
@@ -93,13 +93,13 @@ export function HireDetail() {
         </div>
       </section>
       <Plans who={`${r.tech} developer`} />
-      <Steps steps={hireSteps(r.tech)} title="Simple 4-step hiring process" sub={`Get a dedicated ${r.tech} developer onboarded in as little as 48 hours.`} />
+      <Steps steps={hireSteps(r.tech)} title="Simple 4-step hiring process" sub={`Share what you need, interview ${r.tech} candidates, and start once you are happy.`} />
       <Faq items={hireFaqs(r.tech)} title={`Hiring ${r.tech} developers: FAQ`} />
       <section className="sec" aria-labelledby="more-title">
         <div className="wrap">
           <div data-rv><Kicker>More roles</Kicker><h2 id="more-title" className="h-sec mb-9">Hire other developers</h2></div>
           <div className="flex flex-wrap gap-2.5" data-rv style={{ '--d': '.1s' }}>
-            {others.map((x) => <Link key={x.slug} to={`/hire/${x.slug}`} className="rounded-full px-5 py-3 font-bold shadow-[inset_0_0_0_1px_rgba(18,52,152,.16)] transition-colors hover:bg-nova hover:text-cream">{x.label}</Link>)}
+            {others.map((x) => <Link key={x.slug} to={`/hire/${x.slug}/`} className="rounded-full px-5 py-3 font-bold shadow-[inset_0_0_0_1px_rgba(18,52,152,.16)] transition-colors hover:bg-nova hover:text-cream">{x.label}</Link>)}
           </div>
         </div>
       </section>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Icon, Mark, Btn, Split } from './ui.jsx';
 import { SITE } from '../data/site.js';
 
-const OPTIONS = ['New website', 'Mobile app', 'Custom software', 'UI/UX design', 'SEO & marketing', 'E-commerce store', 'AI solution', 'Security audit', 'Hire developers'];
+const OPTIONS = ['New website', 'Mobile app', 'Custom software', 'UI/UX design', 'PR campaign', 'Branding & logo', 'E-commerce store', 'AI solution', 'Security audit', 'Hire developers'];
 
 const ENDPOINT = (import.meta.env?.VITE_FORM_ENDPOINT || SITE.formEndpoint || '').trim();
 const LABELS = { name: 'Name', email: 'Email', phone: 'Phone', company: 'Company', type: 'Need', service: 'Services', budget: 'Budget', message: 'Message' };
@@ -117,7 +117,7 @@ export function ProjectCard({ p, i = 0, className = '', rv = true }) {
         <a href={p.url} target="_blank" rel="noopener" className="absolute inset-0 z-20 rounded-[inherit]" aria-label={`Visit ${p.name} website (opens in a new tab)`} />
       </div>
       <div className="flex items-start justify-between gap-4">
-        <div><h3 className="text-lg font-semibold">{p.name}</h3><p className="mt-1 text-sm text-ink-soft">{p.category}, website</p></div>
+        <div><h3 className="text-lg font-semibold">{p.name}</h3><p className="mt-1 text-sm text-ink-soft">{p.category} · {p.owner || 'Client project'}</p></div>
         <div className="flex flex-wrap justify-end gap-2">{p.tags.map((t) => <span key={t} className="chip !py-1.5 !text-xs text-ink-soft">{t}</span>)}</div>
       </div>
     </article>
@@ -161,10 +161,28 @@ export function CaseCard({ c, i = 0 }) {
         </div>
         <span aria-hidden="true" className="pointer-events-none absolute -bottom-4 right-4 font-display text-[7rem] font-bold leading-none tracking-[-0.07em] text-white/10 transition-transform duration-700 ease-out group-hover:-translate-y-2">{c.mono}</span>
         <div className="relative mt-10">
-          <h3 className="font-display text-[clamp(1.4rem,2.4vw,1.9rem)] font-semibold leading-tight tracking-[-0.03em]"><Link to={`/case-studies/${c.slug}`} className="stretched">{c.client}</Link></h3>
+          <h3 className="font-display text-[clamp(1.4rem,2.4vw,1.9rem)] font-semibold leading-tight tracking-[-0.03em]"><Link to={`/case-studies/${c.slug}/`} className="stretched">{c.client}</Link></h3>
           <p className="mt-3 max-w-[40ch] text-[.95rem] text-white/80">{c.summary}</p>
           <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold">Read case study <Icon name="arrow" className="h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-1" /></span>
         </div>
+      </div>
+    </article>
+  );
+}
+
+/** Card for a Twenova-owned product. */
+export function ProductCard({ p, i = 0 }) {
+  return (
+    <article data-rv style={{ '--d': `${(i % 2) * 0.08}s` }} className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-nova-900 text-cream shadow-[0_34px_60px_-38px_rgba(6,19,64,.6)]" data-cursor="View product">
+      <div className="relative overflow-hidden">
+        <img src={p.image} alt={`${p.name} by Twenova: ${p.category}`} width={p.imageW} height={p.imageH} loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
+        <span className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-volt px-3.5 py-1.5 text-xs font-extrabold text-ink"><i className="h-1.5 w-1.5 rounded-full bg-ink" />Twenova product · {p.status}</span>
+      </div>
+      <div className="flex flex-1 flex-col p-7 sm:p-9">
+        <p className="text-sm font-bold text-mist">{p.category}</p>
+        <h3 className="mt-2 font-display text-[clamp(1.5rem,2.6vw,2rem)] font-semibold tracking-[-0.03em]"><Link to={`/products/${p.slug}/`} className="stretched">{p.name}</Link></h3>
+        <p className="mt-3 text-[#D7DFF8]">{p.tagline}</p>
+        <span className="mt-auto pt-7 inline-flex items-center gap-2 text-sm font-extrabold text-volt">See the product <Icon name="arrow" className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" /></span>
       </div>
     </article>
   );

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-/** The original tweNova hero effect: rising 0/1 columns that glow near the pointer. */
+/** The original Twenova hero effect: rising 0/1 columns that glow near the pointer. */
 export default function BinaryRain({ opacity = 0.7, className = '' }) {
   const ref = useRef(null);
   useEffect(() => {
@@ -8,7 +8,7 @@ export default function BinaryRain({ opacity = 0.7, className = '' }) {
     const ctx = canvas.getContext('2d');
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const FONT = 14, CH = ['0', '1'];
-    let drops = [], frame = 0, w = 0, h = 0, running = false, last = 0, raf = 0;
+    let drops = [], glyph = [], frame = 0, w = 0, h = 0, running = false, last = 0, raf = 0;
     const mouse = { x: -9999, y: -9999 };
     const host = canvas.parentElement;
 
@@ -23,20 +23,21 @@ export default function BinaryRain({ opacity = 0.7, className = '' }) {
     }
     function draw() {
       frame++;
-      ctx.fillStyle = 'rgba(6, 19, 64, 0.06)'; ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = 'rgba(6, 19, 64, 0.026)'; ctx.fillRect(0, 0, w, h);
       ctx.font = FONT + 'px "JetBrains Mono", ui-monospace, monospace';
       for (let i = 0; i < drops.length; i++) {
-        const c = CH[Math.random() < 0.5 ? 0 : 1], x = i * FONT, y = h - drops[i] * FONT;
+        const step = frame % 7 === 0; if (step || !glyph[i]) glyph[i] = CH[Math.random() < 0.5 ? 0 : 1];
+        const c = glyph[i], x = i * FONT, y = h - drops[i] * FONT;
         const dx = x - mouse.x, dy = y - mouse.y, near = dx * dx + dy * dy < 26000;
         ctx.fillStyle = near ? '#FFFFFF' : '#FEFAEF'; ctx.fillText(c, x, y);
         const g = ctx.createLinearGradient(x, y, x, y + FONT * 6);
         g.addColorStop(0, near ? 'rgba(254,250,239,1)' : 'rgba(143,167,242,1)'); g.addColorStop(1, 'rgba(18,52,152,0)');
         ctx.fillStyle = g; ctx.fillText(c, x, y + FONT);
-        if (frame % 3 === 0) drops[i]++;
+        if (step) drops[i]++;
         if (drops[i] * FONT > h + FONT * 20 && Math.random() > 0.97) drops[i] = 0;
       }
     }
-    const loop = (t) => { if (!running) return; if (t - last > 80) { draw(); last = t; } raf = requestAnimationFrame(loop); };
+    const loop = (t) => { if (!running) return; if (t - last > 33) { draw(); last = t; } raf = requestAnimationFrame(loop); };
     const start = () => { if (!running && !reduce) { running = true; raf = requestAnimationFrame(loop); } };
     const stop = () => { running = false; cancelAnimationFrame(raf); };
 

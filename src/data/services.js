@@ -1,12 +1,12 @@
-// Each service has its own page at /services/:slug
-export const services = [
+// Each service has its own page at /<slug>/ . Set enabled: false on any service Twenova does not offer.
+const ALL = [
   {
-    slug: 'web-development', legacy: 'web', icon: 'code', name: 'Web development',
+    slug: 'web-development', legacy: 'web', icon: 'code', name: 'Web development', core: true,
     short: 'Fast, SEO-ready websites and web apps built around how your business works.',
     title: 'Web development that turns visitors into customers',
     lede: 'Business websites, portals and web applications that load fast, rank well and are easy for your team to update.',
-    seoTitle: 'Web Development Company in India | tweNova',
-    seoDesc: 'Custom websites and web applications by tweNova: fast, responsive, SEO-ready builds with PHP, Laravel, React and Node.js. Get a free quote.',
+    seoTitle: 'Web Development Company in India | Twenova',
+    seoDesc: 'Custom websites and web applications by Twenova: fast, responsive, SEO-ready builds with PHP, Laravel, React and Node.js. Get a free quote.',
     overview: [
       'Your website is often the first conversation a customer has with your business. We design and build sites that explain what you do in seconds, work perfectly on phones and load quickly on any connection.',
       'For more complex needs we build web applications: customer portals, booking systems, dashboards and internal tools, with clean code your team can maintain long after launch.'
@@ -20,7 +20,7 @@ export const services = [
       ['refresh', 'Redesign and migration', 'Modernise an old site without losing your search rankings.']
     ],
     benefits: [
-      ['Fast by default', 'Lean code and optimised assets, so pages load in about two seconds.'],
+      ['Fast by default', 'Lean code and optimised images so pages load quickly, even on mobile data.'],
       ['Built to rank', 'Technical SEO, structured data and clean URLs are part of every build.'],
       ['Easy to update', 'Content you can change yourself, plus clear documentation.'],
       ['Secure and stable', 'HTTPS, backups and regular updates keep your site safe.']
@@ -41,12 +41,12 @@ export const services = [
     ]
   },
   {
-    slug: 'mobile-app-development', legacy: 'mobile', icon: 'mobile', name: 'Mobile app development',
+    slug: 'mobile-app-development', legacy: 'mobile', icon: 'mobile', name: 'Mobile app development', core: true,
     short: 'iOS and Android apps designed to grow revenue and keep users coming back.',
     title: 'Mobile apps people open every day',
     lede: 'Native and cross-platform apps for iOS and Android, from first prototype to App Store and Google Play launch.',
-    seoTitle: 'Mobile App Development Company | iOS & Android | tweNova',
-    seoDesc: 'tweNova builds iOS and Android apps with Flutter, React Native, Swift and Kotlin. From MVP to store launch, with design, backend and support.',
+    seoTitle: 'Mobile App Development Company | iOS & Android | Twenova',
+    seoDesc: 'Twenova builds iOS and Android apps with Flutter, React Native, Swift and Kotlin. From MVP to store launch, with design, backend and support.',
     overview: [
       'We have shipped apps for healthcare, pharmacy search, school management, online classes and games. Each one started with a simple question: what does the user need to do in under a minute?',
       'We handle everything: UX design, the app itself, the backend and admin panel, store listings and updates after launch.'
@@ -81,12 +81,52 @@ export const services = [
     ]
   },
   {
+    slug: 'custom-software-development', legacy: 'custom', icon: 'layers', name: 'Custom software development', core: true,
+    short: 'Business software built around the way your team actually works.',
+    title: 'Custom software for workflows off-the-shelf tools cannot handle',
+    lede: 'When spreadsheets and ready-made tools start slowing your team down, we design and build software that fits your process, connects to your other systems and grows with you.',
+    seoTitle: 'Custom Software Development Company in India | Twenova',
+    seoDesc: 'Twenova builds custom business software: internal tools, portals, dashboards, ERP and CRM modules and workflow automation, designed around your process.',
+    overview: [
+      'Ready-made software is a good start, but many businesses reach a point where they are paying for features they do not use and working around the ones they need. Custom software is worth considering when a process is central to how you make money, when you need several tools to talk to each other, or when your data and access rules are specific to your business.',
+      'We start by mapping your current workflow, then agree on a first release that solves the most expensive problem. Every build includes user roles, documentation and a handover, so your team stays in control after launch.'
+    ],
+    offerings: [
+      ['layers', 'Internal tools and portals', 'Admin panels, staff portals and customer portals for your daily operations.'],
+      ['chart', 'Dashboards and reporting', 'One place to see the numbers that matter, built from your own data.'],
+      ['refresh', 'Workflow automation', 'Replace manual steps, repeated data entry and email chains.'],
+      ['db', 'ERP and CRM modules', 'Modules for inventory, orders, billing, students or customers, where off-the-shelf tools fall short.'],
+      ['chain', 'Integrations and APIs', 'Connect accounting, payments, messaging and other systems you already use.'],
+      ['shield', 'Roles, permissions and audit trails', 'Control who can see and change what, with a record of important actions.']
+    ],
+    benefits: [
+      ['Fits your process', 'Software shaped around how your team works, not the other way round.'],
+      ['You own it', 'The code and data belong to you, with documentation for future developers.'],
+      ['Grows in stages', 'Start with the most valuable module and add more as you go.'],
+      ['Fewer manual steps', 'Automation removes repeated work and the errors that come with it.']
+    ],
+    process: [
+      ['Discover', 'We map the current workflow, users, data and pain points.'],
+      ['Plan', 'Agree the first release, architecture and acceptance criteria.'],
+      ['Build and test', 'Development in short cycles with a staging link and QA.'],
+      ['Roll out and support', 'Training, documentation, handover and ongoing support if you need it.']
+    ],
+    tech: ['PHP', 'Laravel', 'Node.js', 'React', 'Vue.js', 'MySQL', 'PostgreSQL', 'REST APIs', 'AWS', 'Docker'],
+    work: ['ERP School'],
+    faqs: [
+      ['When is custom software better than ready-made software?', 'When a process is central to your business, when you need several tools to work together, or when monthly licences for features you do not use cost more than building what you need. If a ready-made tool fits well, we will tell you.'],
+      ['Can it connect to the tools we already use?', 'Usually, yes. Most accounting, payment, messaging and CRM tools offer APIs. We confirm what is possible during discovery.'],
+      ['Who owns the software?', 'You do. The source code, data and documentation are handed over to you.'],
+      ['What happens when we need changes later?', 'Changes are scoped and estimated separately, or covered by a support plan if you choose one.']
+    ]
+  },
+  {
     slug: 'ai-ml-development', legacy: 'ai', icon: 'spark', name: 'AI and ML development',
     short: 'Intelligent automation that saves time and speeds up growth.',
     title: 'AI that does real work for your business',
     lede: 'Chatbots, AI agents, smart search and predictive models that plug into the tools you already use.',
-    seoTitle: 'AI & ML Development Services | Chatbots & Agents | tweNova',
-    seoDesc: 'AI chatbots, agents, NLP, predictive analytics and automation from tweNova. Practical AI solutions integrated into your website, app or workflow.',
+    seoTitle: 'AI & ML Development Services | Chatbots & Agents | Twenova',
+    seoDesc: 'AI chatbots, agents, NLP, predictive analytics and automation from Twenova. Practical AI solutions integrated into your website, app or workflow.',
     overview: [
       'AI is most valuable when it removes a repetitive task or answers customers faster. We start with one clear use case, prove the value and then expand.',
       'We work with leading AI APIs and open models, and we build the guardrails, data pipelines and dashboards that make AI dependable in production.'
@@ -121,43 +161,43 @@ export const services = [
     ]
   },
   {
-    slug: 'product-engineering', legacy: 'product', icon: 'box', name: 'Product engineering',
-    short: 'Scalable software products from first prototype to growth.',
-    title: 'From idea to a product people pay for',
-    lede: 'We help founders and companies design, build and scale software products, from MVP to SaaS platform.',
-    seoTitle: 'Product Engineering & MVP Development | tweNova',
-    seoDesc: 'MVP development, prototyping, SaaS platforms and product scaling by tweNova. A product team that builds fast and grows with you.',
+    slug: 'saas-development', legacy: 'product', icon: 'box', name: 'SaaS development', core: true,
+    short: 'SaaS products and MVPs, from first version to a platform customers pay for.',
+    title: 'SaaS product development, from MVP to a product customers pay for',
+    lede: 'We help founders and companies plan, build and grow SaaS products: a focused MVP first, then the accounts, subscriptions, admin tools and scale a real product needs.',
+    seoTitle: 'SaaS Development Company in India | SaaS MVP | Twenova',
+    seoDesc: 'Twenova builds SaaS products and MVPs: product discovery, multi-user accounts, subscriptions and billing, admin panels and scalable cloud architecture.',
     overview: [
-      'Building a product is different from building a project. We focus on the smallest version that proves your idea, then improve it with real user feedback.',
-      'As you grow, we scale the architecture, add features and keep the codebase healthy so speed does not drop.'
+      'A SaaS product has to do more than work. Customers sign up on their own, pay on a schedule, invite their team and expect it to be available whenever they need it. We plan for that from the start, while keeping the first release small enough to launch and learn from.',
+      'We begin with product discovery: who the users are, the one job the product must do well, and what can wait. Then we build the MVP, measure how people use it and add features based on real usage rather than guesses.'
     ],
     offerings: [
-      ['rocket', 'MVP development', 'Launch a focused first version in weeks, not months.'],
-      ['pen', 'Product prototyping', 'Clickable prototypes to test ideas with users and investors.'],
-      ['layers', 'SaaS development', 'Multi-tenant platforms with billing, roles and dashboards.'],
-      ['trend', 'Product scaling', 'Performance, architecture and infrastructure for growth.'],
-      ['refresh', 'Legacy modernisation', 'Rebuild old systems on a modern, maintainable stack.'],
-      ['users', 'Product team on demand', 'Designers, developers and QA working as your team.']
+      ['rocket', 'SaaS MVP development', 'A focused first version with the core feature, sign-up and payments.'],
+      ['pen', 'Product discovery and prototyping', 'Clickable prototypes to test the idea with users before full development.'],
+      ['users', 'Accounts, teams and roles', 'Sign-up, login, team invites and role-based access, with data kept separate per customer account.'],
+      ['coin', 'Subscriptions and billing', 'Plans, trials and recurring payments through Razorpay or Stripe.'],
+      ['chart', 'Admin panel and analytics', 'Tools for your team to manage customers, plans and product usage.'],
+      ['trend', 'Scaling and iteration', 'Performance, monitoring and new features as your customer base grows.']
     ],
     benefits: [
-      ['Speed to market', 'Ship early, learn fast and avoid building the wrong thing.'],
-      ['Clean architecture', 'A codebase that stays easy to change as you grow.'],
-      ['Business focused', 'Every feature tied to a user or revenue goal.'],
-      ['Transparent progress', 'Weekly demos and a shared roadmap.']
+      ['Launch sooner', 'A tight MVP scope gets the product in front of customers earlier.'],
+      ['Built for many customers', 'Account separation, roles and billing planned from day one.'],
+      ['Clean architecture', 'A codebase that stays easy to change as the product grows.'],
+      ['Transparent progress', 'Regular demos and a shared roadmap.']
     ],
     process: [
-      ['Validate', 'Define the problem, users and success metrics.'],
-      ['Prototype', 'Test the core flow before writing production code.'],
-      ['Build the MVP', 'Launch the smallest valuable version.'],
-      ['Grow', 'Iterate, scale and add features from real data.']
+      ['Validate', 'Define the problem, the users and how success will be measured.'],
+      ['Prototype', 'Test the core flow with a clickable design before writing production code.'],
+      ['Build the MVP', 'Launch the smallest version that delivers real value.'],
+      ['Grow', 'Iterate, monitor and scale based on how customers use the product.']
     ],
-    tech: ['React', 'Next.js', 'Node.js', 'Laravel', 'PostgreSQL', 'AWS', 'Docker', 'Stripe', 'Razorpay'],
-    work: ['ERP School', 'Admission Points'],
+    tech: ['React', 'Next.js', 'Node.js', 'Laravel', 'PostgreSQL', 'MySQL', 'AWS', 'Docker', 'Razorpay', 'Stripe'],
+    work: [],
     faqs: [
-      ['What is an MVP?', 'A minimum viable product is the simplest version that solves the core problem, so you can launch and learn quickly.'],
-      ['How much does an MVP cost?', 'It depends on scope. After a short discovery call we give you a fixed quote.'],
-      ['Can you work with our in-house team?', 'Yes. We can lead the build or join your existing team.'],
-      ['Do you sign an NDA?', 'Yes, before we discuss any details of your idea.']
+      ['What should go into a SaaS MVP?', 'Only what a customer needs to get the core value: the main feature, sign-up and login, and usually payments. Everything else waits until real users ask for it.'],
+      ['How is SaaS pricing for development decided?', 'It depends on the features, number of user roles, integrations and billing setup. After a discovery call we share a scoped estimate.'],
+      ['Can you add subscriptions and recurring billing?', 'Yes. We integrate payment providers such as Razorpay or Stripe for plans, trials and recurring payments.'],
+      ['Who owns the product and code?', 'You do. All source code and intellectual property belong to you, and we can sign an NDA before discussing your idea.']
     ]
   },
   {
@@ -165,8 +205,8 @@ export const services = [
     short: 'Future-ready blockchain solutions for modern businesses.',
     title: 'Blockchain solutions built on solid engineering',
     lede: 'Smart contracts, decentralised apps and token platforms designed with security and real use cases first.',
-    seoTitle: 'Blockchain Development Services | Smart Contracts | tweNova',
-    seoDesc: 'Smart contract development, dApps, DeFi and NFT platforms by tweNova. Secure, audited blockchain solutions for real business needs.',
+    seoTitle: 'Blockchain Development Services | Smart Contracts | Twenova',
+    seoDesc: 'Smart contract development, dApps, DeFi and NFT platforms by Twenova. Secure, audited blockchain solutions for real business needs.',
     overview: [
       'Blockchain makes sense when you need shared records, transparent transactions or digital ownership. We help you decide if it fits before writing any code.',
       'When it does, we build secure smart contracts, user-friendly apps on top of them and the backend that ties everything together.'
@@ -205,14 +245,14 @@ export const services = [
     short: 'Reliable hosting, automated deployments and monitoring.',
     title: 'Cloud and DevOps that keep you online and moving fast',
     lede: 'Cloud migration, CI/CD pipelines and infrastructure as code, matched to your goals and budget.',
-    seoTitle: 'Cloud & DevOps Services | AWS, CI/CD, Docker | tweNova',
-    seoDesc: 'Cloud migration, CI/CD, Docker, Kubernetes and monitoring from tweNova. Reliable, cost-efficient infrastructure on AWS, Google Cloud and more.',
+    seoTitle: 'Cloud & DevOps Services | AWS, CI/CD, Docker | Twenova',
+    seoDesc: 'Cloud migration, CI/CD, Docker, Kubernetes and monitoring from Twenova. Reliable, cost-efficient infrastructure on AWS, Google Cloud and more.',
     overview: [
       'Slow releases and surprise outages cost money. We set up infrastructure that deploys automatically, scales with demand and alerts you before users notice a problem.',
       'We also review cloud bills. Right-sizing servers and removing waste often pays for the work itself.'
     ],
     offerings: [
-      ['cloud', 'Cloud migration', 'Move from shared hosting or on-premise servers with zero data loss.'],
+      ['cloud', 'Cloud migration', 'Move from shared hosting or on-premise servers with a tested backup and rollback plan.'],
       ['refresh', 'CI/CD pipelines', 'Automatic testing and deployment on every code change.'],
       ['box', 'Containers', 'Docker and Kubernetes for consistent, scalable apps.'],
       ['code', 'Infrastructure as code', 'Reproducible environments with Terraform.'],
@@ -245,8 +285,8 @@ export const services = [
     short: 'Interfaces that look premium, feel intuitive and convert.',
     title: 'Design that makes the next step obvious',
     lede: 'User research, wireframes, interface design and design systems for websites and apps.',
-    seoTitle: 'UI/UX Design Services | Web & App Design | tweNova',
-    seoDesc: 'User research, wireframes, prototypes, UI design and design systems by tweNova. Intuitive, accessible designs that convert visitors into customers.',
+    seoTitle: 'UI/UX Design Services | Web & App Design | Twenova',
+    seoDesc: 'User research, wireframes, prototypes, UI design and design systems by Twenova. Intuitive, accessible designs that convert visitors into customers.',
     overview: [
       'Good design is not decoration. It helps people understand your offer and act on it. We design every screen around the one thing a user needs to do there.',
       'You get clickable prototypes to test early, and a design system that keeps your product consistent as it grows.'
@@ -281,43 +321,83 @@ export const services = [
     ]
   },
   {
-    slug: 'digital-marketing-seo', legacy: 'seo', icon: 'chart', name: 'Digital marketing and SEO',
-    short: 'Data-driven marketing that reaches the right audience.',
-    title: 'Be found first by the customers you want',
-    lede: 'Technical SEO, local SEO, content and paid campaigns, reported every month in plain numbers.',
-    seoTitle: 'SEO & Digital Marketing Services in India | tweNova',
-    seoDesc: 'Technical SEO, local SEO, Google Ads, social media and content marketing from tweNova. Clear monthly reports focused on leads and sales.',
+    slug: 'pr-campaigns', legacy: 'pr', icon: 'chat', name: 'PR campaigns',
+    short: 'Campaigns that get your brand, launch or product talked about.',
+    title: 'PR campaigns that get people talking about your brand',
+    lede: 'We plan and run PR campaigns for launches, milestones and brand stories: the message, the content and the channels, so the right people hear about you.',
+    seoTitle: 'PR Campaigns for Startups and Businesses | Twenova',
+    seoDesc: 'Twenova plans and runs PR campaigns for product launches, announcements and brand stories: messaging, press material, content and campaign rollout.',
     overview: [
-      'Traffic only matters if it turns into enquiries. We focus on the searches and audiences most likely to become customers, then measure leads, not just clicks.',
-      'Our developers fix technical SEO issues directly in your code, which is often where the biggest gains are.'
+      'A good product can still go unnoticed. A PR campaign gives people a reason to pay attention: a clear story, told at the right moment, in the places your audience already looks.',
+      'We start with what you want to achieve, such as a launch, a new service or a milestone, then shape the story, prepare the material and plan where and when it goes out. We keep the claims honest and the message consistent across every channel.'
     ],
     offerings: [
-      ['search', 'Technical SEO', 'Speed, indexing, structured data and site health fixes.'],
-      ['pin', 'Local SEO', 'Google Business Profile and local rankings for nearby customers.'],
-      ['pen', 'Content strategy', 'Articles and pages that answer what customers search for.'],
-      ['target', 'Google Ads', 'Search and display campaigns with tight budget control.'],
-      ['users', 'Social media marketing', 'Organic and paid campaigns on the platforms your audience uses.'],
-      ['chart', 'Analytics and reporting', 'GA4, conversions and a clear monthly report.']
+      ['rocket', 'Launch campaigns', 'Campaigns for new products, apps, websites and services.'],
+      ['chat', 'Messaging and storytelling', 'The core story, key messages and the words your brand uses.'],
+      ['pen', 'Press material', 'Press releases, media kits, founder bios and fact sheets.'],
+      ['users', 'Social and community campaigns', 'Campaign content and posting plans for Instagram, LinkedIn and Facebook.'],
+      ['film', 'Campaign creatives', 'Reels, posters and visuals that carry the campaign message.'],
+      ['chart', 'Campaign reporting', 'A clear summary of what went out and how people responded.']
     ],
     benefits: [
-      ['Leads over vanity metrics', 'We report enquiries and sales, not just impressions.'],
-      ['Developers on the team', 'Technical fixes done properly, not just recommended.'],
-      ['Transparent pricing', 'You see exactly where the budget goes.'],
-      ['No long lock-ins', 'Month-to-month plans after the first period.']
+      ['One clear story', 'The same message across your website, social media and press material.'],
+      ['Ready-to-use material', 'Press releases, visuals and posts you can use again later.'],
+      ['Built around a goal', 'Every campaign is planned around one outcome you choose.'],
+      ['Design and content together', 'Creatives and copy made by the same team, so they match.']
     ],
     process: [
-      ['Audit', 'Technical, content and competitor review.'],
-      ['Plan', 'Keyword map, content plan and channel budget.'],
-      ['Execute', 'Fixes, content and campaigns launched.'],
-      ['Report', 'Monthly results and next steps.']
+      ['Brief', 'Agree the goal, audience, timeline and what makes the story worth telling.'],
+      ['Story', 'Shape the key messages and the angle for each channel.'],
+      ['Create', 'Prepare press material, posts, reels and visuals.'],
+      ['Launch and review', 'Roll out the campaign and share a summary of the response.']
     ],
-    tech: ['Google Search Console', 'GA4', 'Google Ads', 'Meta Ads', 'Ahrefs', 'Semrush', 'Tag Manager', 'Looker Studio'],
-    work: ['Royal City DGP', 'Coalfield Drug House', 'EasyTrip Tour & Travels'],
+    tech: ['Press releases', 'Media kits', 'Instagram', 'LinkedIn', 'Facebook', 'Reels', 'Canva', 'Figma'],
+    work: [],
     faqs: [
-      ['How long does SEO take to work?', 'Technical fixes can help within weeks. Strong ranking gains usually take 3 to 6 months.'],
-      ['Do you guarantee first page rankings?', 'No one can honestly guarantee rankings. We commit to clear work and transparent results.'],
-      ['Can you run our Google Ads?', 'Yes. We set up, manage and optimise campaigns with weekly checks.'],
-      ['Will I get reports?', 'Yes, a plain-language report every month with leads, rankings and next steps.']
+      ['What kind of PR campaigns do you run?', 'Launches of products, apps and websites, announcements, milestones and brand stories, mainly through press material and social channels.'],
+      ['Do you guarantee media coverage?', 'No. No honest agency can promise coverage. We prepare strong material and a clear plan to give your story the best chance.'],
+      ['Can you also make the visuals and reels?', 'Yes. Our design team creates the posters, social posts and reels for the campaign.'],
+      ['How long does a campaign take?', 'It depends on the goal and channels. We share a timeline after the first brief.']
+    ]
+  },
+  {
+    slug: 'branding-logo-design', legacy: 'branding', icon: 'pen', name: 'Branding and logo design',
+    short: 'Logos and brand identities that make a strong first impression.',
+    title: 'Branding and logo design that makes your business memorable',
+    lede: 'We design logos and complete brand identities: the symbol, the colours, the type and the guidelines that keep your brand consistent everywhere.',
+    seoTitle: 'Branding and Logo Design Company in India | Twenova',
+    seoDesc: 'Logo design, brand identity, colour palettes, typography and brand guidelines by Twenova, for startups and businesses that want a strong first impression.',
+    overview: [
+      'Your logo is often the first thing people see. A clear, well-made identity makes a business look trustworthy before anyone reads a word, and keeps it recognisable on a website, an app icon, a business card or a social media profile.',
+      'We start by understanding your business and audience, explore a few directions, and refine the chosen one into a complete identity. You receive the files in every format you need and a guideline document that explains how to use them.'
+    ],
+    offerings: [
+      ['pen', 'Logo design', 'A distinctive logo and icon that work at every size, from favicon to billboard.'],
+      ['layers', 'Brand identity', 'Colour palette, typography and visual style that fit together.'],
+      ['refresh', 'Logo redesign', 'A modern update to an existing logo that keeps what people recognise.'],
+      ['box', 'Brand guidelines', 'A guide that shows how to use the logo, colours and fonts correctly.'],
+      ['mobile', 'Brand mockups', 'Your identity shown on websites, apps, social profiles and stationery.'],
+      ['users', 'Social media kit', 'Profile pictures, cover banners and post templates in your brand style.']
+    ],
+    benefits: [
+      ['Strong first impression', 'A professional identity that builds trust from the first look.'],
+      ['Consistent everywhere', 'Guidelines keep the brand looking the same on every channel.'],
+      ['All the files you need', 'Vector and image formats for print, web and social media.'],
+      ['Design that explains itself', 'We show the thinking behind every shape and colour.']
+    ],
+    process: [
+      ['Discover', 'Learn about your business, audience, competitors and taste.'],
+      ['Explore', 'Present a few design directions to choose from.'],
+      ['Refine', 'Develop the chosen direction into a complete identity.'],
+      ['Deliver', 'Final files, mockups and brand guidelines.']
+    ],
+    tech: ['Logo design', 'Brand identity', 'Brand guidelines', 'Figma', 'Adobe Illustrator', 'SVG', 'Mockups'],
+    work: [],
+    faqs: [
+      ['What do I receive at the end?', 'Your logo in vector and image formats (SVG, PNG, PDF), colour and font details, mockups and a brand guideline document.'],
+      ['Can you redesign our existing logo?', 'Yes. We can modernise an existing logo while keeping what your customers already recognise.'],
+      ['How many design options do I get?', 'We agree the number of initial directions and revision rounds in the proposal before we start.'],
+      ['Who owns the final logo?', 'You do, once the project is paid in full.']
     ]
   },
   {
@@ -325,8 +405,8 @@ export const services = [
     short: 'Online stores with secure payments and easy product management.',
     title: 'Online stores that make buying easy',
     lede: 'Shopify, WooCommerce and custom storefronts with secure payments, inventory and order management.',
-    seoTitle: 'E-commerce Website Development | Shopify & WooCommerce | tweNova',
-    seoDesc: 'E-commerce development by tweNova: Shopify, WooCommerce and custom stores with Razorpay, Stripe, inventory and fast checkout.',
+    seoTitle: 'E-commerce Website Development | Shopify & WooCommerce | Twenova',
+    seoDesc: 'E-commerce development by Twenova: Shopify, WooCommerce and custom stores with Razorpay, Stripe, inventory and fast checkout.',
     overview: [
       'Every extra step in checkout loses sales. We design stores that make products easy to find and buying quick, especially on mobile.',
       'Behind the scenes, we connect payments, shipping, inventory and accounting so your team spends less time on admin.'
@@ -365,8 +445,8 @@ export const services = [
     short: 'Find and fix security gaps in your website, apps and servers before attackers do.',
     title: 'Security audits that protect your data and your patients',
     lede: 'We test your websites, apps, APIs and servers the way an attacker would, then give you a clear, prioritised plan to fix every gap.',
-    seoTitle: 'Security Audit & VAPT Services in India | tweNova',
-    seoDesc: 'Website, mobile app, API and server security audits (VAPT) by tweNova. OWASP-based testing, a prioritised fix plan and a retest. Trusted by hospitals.',
+    seoTitle: 'Security Audit & VAPT Services in India | Twenova',
+    seoDesc: 'Website, mobile app, API and server security audits (VAPT) by Twenova. OWASP-based testing, a prioritised fix plan and a retest. Trusted by hospitals.',
     overview: [
       'A single weak password, an outdated plugin or an exposed API can leak customer data and stop your business for days. Hospitals, clinics and other businesses that hold sensitive records are frequent targets.',
       'Our security audit combines automated scanning with manual testing by our engineers. You get a report written in plain language, a ranked list of fixes, and a retest to confirm every issue is closed.'
@@ -403,4 +483,7 @@ export const services = [
   }
 ];
 
+// Core services first, then the rest. Services with enabled: false are hidden everywhere (pages, menu, sitemap).
+export const services = [...ALL.filter((s) => s.core), ...ALL.filter((s) => !s.core)].filter((s) => s.enabled !== false);
+export const coreServices = services.filter((s) => s.core);
 export const serviceBySlug = Object.fromEntries(services.map((s) => [s.slug, s]));

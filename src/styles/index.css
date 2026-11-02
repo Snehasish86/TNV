@@ -18,7 +18,7 @@
   .lenis.lenis-stopped { overflow: hidden; }
   body { padding-bottom: env(safe-area-inset-bottom, 0px); overflow-x: hidden; }
   h1, h2, h3, h4 { font-family: theme('fontFamily.display'); letter-spacing: -0.025em; line-height: 1.06; }
-  ::selection { background: #123498; color: #FEFAEF; }
+  ::selection { background: #70FF00; color: #0B1A4D; }
   :focus-visible { outline: 2px solid #1B42B8; outline-offset: 3px; border-radius: 6px; }
   .dark-sec :focus-visible { outline-color: #FEFAEF; }
 }
@@ -37,7 +37,7 @@
   .btn:hover { transform: translateY(-2px); }
   .btn:disabled { @apply pointer-events-none opacity-60; }
   .btn-primary { @apply bg-nova text-cream hover:bg-nova-600 hover:shadow-[0_14px_30px_-14px_rgba(18,52,152,.7)]; }
-  .btn-cream { @apply bg-cream text-nova hover:bg-white hover:shadow-[0_14px_30px_-14px_rgba(0,0,0,.5)]; }
+  .btn-cream { @apply bg-cream text-nova hover:bg-volt hover:text-ink hover:shadow-[0_14px_34px_-12px_rgba(112,255,0,.55)]; }
   .btn-ghost { @apply text-current shadow-[inset_0_0_0_1.5px_currentColor] hover:bg-white/10; }
   .btn-ghost-dark { @apply text-ink shadow-[inset_0_0_0_1.5px_currentColor] hover:bg-nova/5; }
 

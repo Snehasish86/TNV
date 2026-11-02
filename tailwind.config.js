@@ -9,7 +9,9 @@ export default {
         cream: { DEFAULT: '#FEFAEF', 200: '#F4EEDB' },
         ink: { DEFAULT: '#0B1A4D', soft: '#3D4A78' },
         sky: { nova: '#8FA7F2' },
-        mist: '#C5D2FA'
+        mist: '#C5D2FA',
+        // funky accent: use as a background or on dark sections, never as text on cream (low contrast)
+        volt: '#70FF00'
       },
       fontFamily: {
         display: ['Unbounded', 'Arial Black', 'system-ui', 'sans-serif'],

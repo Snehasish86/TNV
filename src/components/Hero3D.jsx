@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import SHAPES from '../data/mark-shapes.json';
 
-/** Extruded tweNova monogram. three.js loads only after the page is interactive. */
+/** Extruded Twenova monogram. three.js loads only after the page is interactive. */
 export default function Hero3D() {
   const ref = useRef(null);
   const [ready, setReady] = useState(false);

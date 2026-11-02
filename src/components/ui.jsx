@@ -25,7 +25,7 @@ export function Wordmark({ className = '' }) {
 }
 export function Brand({ className = '' }) {
   return (
-    <Link to="/" aria-label="tweNova home" className={`flex shrink-0 items-center gap-3 ${className}`}>
+    <Link to="/" aria-label="Twenova home" className={`flex shrink-0 items-center gap-3 ${className}`}>
       <Mark className="h-auto w-11 sm:w-12" />
       <Wordmark className="h-auto w-[108px] sm:w-[128px]" />
     </Link>
@@ -58,8 +58,13 @@ export function Decode({ lines, className = '' }) {
   return (
     <span className={`decode block ${className}`} aria-label={lines.map((l) => l.text).join(' ')}>
       {lines.map((l, i) => (
-        <span key={i} aria-hidden="true" className={`block whitespace-nowrap ${l.className || ''}`}>
-          {l.text.split('').map((c, j) => <span key={j} className="c" data-t={c}>{c}</span>)}
+        <span key={i} aria-hidden="true" className={`block ${l.className || ''}`}>
+          {l.text.split(' ').map((w, k, arr) => (
+            <Fragment key={k}>
+              <span className="inline-block whitespace-nowrap">{w.split('').map((c, j) => <span key={j} className="c" data-t={c}>{c}</span>)}</span>
+              {k < arr.length - 1 ? ' ' : ''}
+            </Fragment>
+          ))}
         </span>
       ))}
     </span>
@@ -67,7 +72,7 @@ export function Decode({ lines, className = '' }) {
 }
 
 export function Kicker({ children }) {
-  return <p className="kicker"><span className="h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true" />{children}</p>;
+  return <p className="kicker"><span className="h-2 w-2 rounded-full bg-volt shadow-[0_0_0_1.5px_currentColor]" aria-hidden="true" />{children}</p>;
 }
 
 export function SecHead({ kicker, title, sub, id, dark }) {
@@ -112,7 +117,7 @@ export function Steps({ steps, title, sub, kicker = 'How it works', id = 'steps'
       <div className="wrap">
         <SecHead kicker={kicker} title={title} sub={sub} id={id} dark />
         <div className="relative" data-steps>
-          <div className="absolute left-7 right-7 top-7 hidden h-[2px] overflow-hidden bg-white/20 lg:block" aria-hidden="true"><i className="rail-fill absolute inset-0 bg-cream" /></div>
+          <div className="absolute left-7 right-7 top-7 hidden h-[2px] overflow-hidden bg-white/20 lg:block" aria-hidden="true"><i className="rail-fill absolute inset-0 bg-volt" /></div>
           <ol className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {steps.map(([t, d], i) => (
               <li key={i} data-rv data-step style={{ '--d': `${i * 0.08}s` }} className="relative">
@@ -129,7 +134,7 @@ export function Steps({ steps, title, sub, kicker = 'How it works', id = 'steps'
 }
 
 export function IconCards({ items, cols = 3, dark = false, linkBase }) {
-  const grid = { 2: 'sm:grid-cols-2', 3: 'sm:grid-cols-2 lg:grid-cols-3', 4: 'sm:grid-cols-2 lg:grid-cols-4' }[cols];
+  const grid = { 1: '', 2: 'sm:grid-cols-2', 3: 'sm:grid-cols-2 lg:grid-cols-3', 4: 'sm:grid-cols-2 lg:grid-cols-4' }[cols];
   return (
     <div className={`grid gap-5 ${grid}`}>
       {items.map(([ic, t, d, to], i) => (

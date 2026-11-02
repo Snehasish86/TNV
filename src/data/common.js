@@ -1,8 +1,8 @@
 export const hireFaqs = (tech) => [
-  [`How quickly can a ${tech} developer start?`, 'Usually within 48 hours after you choose a candidate.'],
+  [`How quickly can a ${tech} developer start?`, 'We share matching profiles after we understand your requirements, and the developer starts once you approve.'],
   ['Can I interview the developers first?', 'Yes. You interview the shortlisted candidates and choose who joins your team.'],
   ['Can I hire part time or for a short project?', 'Yes. The hourly model suits part-time and short-term work.'],
-  ['What if the developer is not the right fit?', 'We replace them quickly at no extra cost.'],
+  ['What if the developer is not the right fit?', 'Tell us and we will discuss a replacement or change in scope.'],
   ['Who owns the code and IP?', 'You do. We sign an NDA before work starts and all code belongs to you.']
 ];
 
@@ -20,10 +20,10 @@ export const hireSteps = (tech = '') => [
 ];
 
 export const hireWhy = [
-  ['target', '100% dedicated', 'Your developers work only on your project.'],
-  ['rocket', 'Faster time to market', 'Pre-vetted talent ready to start, so ramp-up takes days, not months.'],
+  ['target', 'Dedicated to you', 'Your developer focuses on your project during the agreed hours.'],
+  ['rocket', 'Faster time to market', 'Reviewed developers who can start without a long recruitment cycle.'],
   ['coin', 'Cost-effective scaling', 'Grow or shrink the team without the cost of in-house hiring.'],
   ['layers', 'Flexible engagement', 'Hourly, monthly or project-based. Pick what fits.'],
   ['chat', 'Transparent communication', 'Daily stand-ups, weekly reports and your choice of tools.'],
-  ['lock', 'IP protection and NDA', 'Your code, data and intellectual property stay 100% yours.']
+  ['lock', 'IP protection and NDA', 'Your code, data and intellectual property belong to you.']
 ];
