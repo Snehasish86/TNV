@@ -72,9 +72,27 @@ Not yet on the site (needs your material): R9Resume and MYOC product pages, veri
 
 - **Products:** new `/products/` hub with `/products/make-your-own-course/` (LMS where teachers earn on their own terms) and `/products/r9resume/` (ATS-friendly AI resume builder, ₹9 per resume). Shown on the homepage, portfolio ("Our products" filter), menu and footer. SoftwareApplication schema (R9Resume with a ₹9 Offer). Data: `src/data/products.js` (add each product's public `url`).
 - **Services:** "Digital marketing and SEO" removed; added **PR campaigns** (`/pr-campaigns/`) and **Branding and logo design** (`/branding-logo-design/`). Old marketing URLs redirect to `/services/`.
-- **Founders:** bios, responsibilities and skills for Snehasish Mondal (full-stack Java developer) and Jhilik Das (creative frontend and MERN stack developer). LinkedIn / GitHub links still to add in `src/data/team.js`.
+- **Founders:** bios, responsibilities and skills for Snehasish Mandal (full-stack Java developer) and Jhilik Das (creative frontend and MERN stack developer). LinkedIn / GitHub links still to add in `src/data/team.js`.
 - **Contact:** phones +91 95933 62928 and +91 87100 27526, Instagram and Facebook added to the contact page, footer and Organization schema (`sameAs`, `contactPoint`).
 - **Navbar:** no longer hides on scroll (that flickered with smooth scrolling); it stays visible and turns solid and compact once. Tested on desktop, tablet and mobile.
 - **Accent colour:** `#70FF00` (Tailwind `volt`) used sparingly: hero highlight, section dots, active menu dot, button hover, process rail, product badges, scroll bar, marquee stars, text selection. Never used as text on cream, for readability.
 - **Smoother binary rain:** 30 fps instead of 12.5 fps, same speed and trail.
 - QA: 51 pages built, 0 SEO issues, 50 URLs tested at 1440 px and 390 px with no errors.
+
+## 9. Update: navigation and smoother experience (3 November 2026)
+
+- **Navigation:** Home · Work · Products · Services ▾ · Company ▾ (About us, Our process, Contact). Blog, Hire developers and Careers are no longer in the menu; their pages still exist and are linked from the footer, sitemap and internal links.
+- **No nav animation:** dropdowns open instantly on click (one at a time) and close on outside click, Esc or page change; no hover scramble, magnetic effect, fade, height change or cursor trail inside the header or mobile menu. Header height is a fixed 72 px.
+- **Less congestion on the homepage:** removed the hero console, the duplicate list of project names and the Hire section; industries cards are shorter; tech stack is two rows; the project carousel cards are smaller so the pinned scroll is about half as long. Page height 19,720 px → 16,804 px on desktop.
+- **Phones:** service cards are a plain list (no stacking overlap, no 3D cube).
+- **Animation timing:** headings reveal in 1.0 s instead of 1.3 s; cards rise 20 px in 0.8 s instead of 28 px in 1 s.
+- **cPanel:** `public/.htaccess` (tested on Apache 2.4) handles HTTPS, www → apex, all old-URL redirects, trailing slashes, the 404 page and caching.
+
+## 10. Update: polish (3 November 2026)
+
+- Services dropdown is compact and never taller than the screen (scrolls inside if needed).
+- Case study cards: colour fills the whole card. Card headings in 4-column grids scale down so long words such as "Manufacturing" fit.
+- Form labels no longer wrap; selected form options are neon green.
+- Green scroll-progress line removed.
+- More `#70FF00`: highlighted words in page headings, check-mark badges on key points, service icons in the menu, breadcrumb arrows.
+- Photos and product screenshots are black and white until hovered; on touch screens they show in colour.

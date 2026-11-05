@@ -16,7 +16,7 @@ export function About() {
   return (
     <>
       <PageHero crumbs={[['Home', '/'], ['About us', '/about-us/']]} icon="heart"
-        title={<>A software development agency for <span className="text-sky-nova">growing businesses</span></>}
+        title={<>A software development agency for <span className="text-volt">growing businesses</span></>}
         lede={SITE.description}>
         <Btn to="/contact/" variant="cream">Start your project</Btn>
         <Btn to="/our-process/" variant="ghost" icon={false}>How we work</Btn>
@@ -44,7 +44,7 @@ export function About() {
           <div className="grid gap-6 sm:grid-cols-2 lg:max-w-4xl">
             {team.map((m, i) => (
               <Link key={m.slug} to={`/${m.slug}/`} data-rv style={{ '--d': `${i * 0.08}s` }} className="card group flex flex-col overflow-hidden !p-0">
-                <img src={m.photo} alt={`${m.name}, ${m.role} of Twenova`} width={m.photoW} height={m.photoH} loading="lazy" decoding="async" className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
+                <img src={m.photo} alt={`${m.name}, ${m.role} of Twenova`} width={m.photoW} height={m.photoH} loading="lazy" decoding="async" className="img-tone aspect-[4/5] w-full object-cover transition-[transform,filter] duration-700 ease-out group-hover:scale-[1.03]" />
                 <div className="p-7"><p className="text-sm font-bold text-nova">{m.role}</p><h3 className="mt-1 text-2xl font-semibold">{m.name}</h3>
                   <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-nova">View profile <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div>
               </Link>
@@ -84,7 +84,7 @@ export function Portfolio() {
   return (
     <>
       <PageHero crumbs={[['Home', '/'], ['Work', '/portfolio/']]} icon="globe"
-        title={<>Work that is <span className="text-sky-nova">live and growing</span></>}
+        title={<>Work that is <span className="text-volt">live and growing</span></>}
         lede="Websites, mobile apps and security audits we delivered for education, healthcare, travel, media and local businesses."
         stats={[[String(projects.length), 'Live websites'], [String(apps.length), 'Published apps'], [String(cases.length), 'Security audits']]}>
         <Btn to="/contact/" variant="cream">Start a project</Btn>
@@ -135,7 +135,7 @@ export function Careers() {
   return (
     <>
       <PageHero crumbs={[['Home', '/'], ['Careers', '/careers/']]} icon="brief"
-        title={<>Do the best work of your career, <span className="text-sky-nova">with us</span></>}
+        title={<>Do the best work of your career, <span className="text-volt">with us</span></>}
         lede="Join a team that builds real products for real users, and grows with every launch."
         >
         <Btn to="#roles" variant="cream">{JOBS_OPEN ? 'See open roles' : 'How to apply'}</Btn>
@@ -180,14 +180,14 @@ export function Blog() {
   const [first, ...rest] = articles;
   return (
     <>
-      <PageHero crumbs={[['Home', '/'], ['Blog', '/blog/']]} icon="chat" title={<>Guides for building <span className="text-sky-nova">better software</span></>} lede="Practical articles on planning, building and growing websites, apps and software products." />
+      <PageHero crumbs={[['Home', '/'], ['Blog', '/blog/']]} icon="chat" title={<>Guides for building <span className="text-volt">better software</span></>} lede="Practical articles on planning, building and growing websites, apps and software products." />
       <section className="sec" aria-labelledby="blog-title">
         <div className="wrap">
           <h2 id="blog-title" className="sr-only">All articles</h2>
           <Link to={`/blog/${first.slug}/`} data-rv className="dark-sec group mb-12 grid gap-8 rounded-[2rem] bg-nova p-8 text-cream sm:p-12 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
             <div><p className="mb-4 flex gap-4 text-sm font-bold text-mist"><span>{first.cat}</span><time dateTime={first.date}>{fmtDate(first.date)}</time><span>{first.mins} min read</span></p><h3 className="text-[clamp(1.8rem,3.4vw,2.7rem)] font-semibold leading-tight">{first.title}</h3><p className="mt-4 text-[#D7DFF8]">{first.desc}</p>
               <span className="mt-6 inline-flex items-center gap-2 font-extrabold">Read the guide <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div>
-            <div aria-hidden="true" className="grid aspect-[4/3] place-items-center rounded-3xl bg-nova-900"><Icon name="spark" className="h-24 w-24 text-sky-nova" /></div>
+            <div aria-hidden="true" className="grid aspect-[4/3] place-items-center rounded-3xl bg-nova-900"><Icon name="spark" className="h-24 w-24 text-volt" /></div>
           </Link>
           <div className="grid gap-5 md:grid-cols-2">
             {rest.map((p, i) => (
@@ -212,7 +212,7 @@ export function Contact() {
   const { errors, status, note, onSubmit } = useForm();
   return (
     <>
-      <PageHero crumbs={[['Home', '/'], ['Contact', '/contact/']]} icon="mail" title={<>Let’s talk about <span className="text-sky-nova">your next build</span></>} lede="Tell us what you need. We reply within one working day with next steps and a rough estimate." />
+      <PageHero crumbs={[['Home', '/'], ['Contact', '/contact/']]} icon="mail" title={<>Let’s talk about <span className="text-volt">your next build</span></>} lede="Tell us what you need. We reply within one working day with next steps and a rough estimate." />
       <section className="sec" id="start" aria-labelledby="form-title">
         <div className="wrap grid items-start gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-20">
           <div data-rv>
@@ -235,12 +235,12 @@ export function Contact() {
             </div>
             <fieldset><legend className="mb-3 font-extrabold">What do you need?</legend>
               <div className="flex flex-wrap gap-2">{['Website', 'Mobile app', 'Custom software', 'UI/UX design', 'PR campaign', 'Branding & logo', 'Security audit', 'Hire developers'].map((o) => (
-                <label key={o} className="relative"><input type="checkbox" name="service" value={o} className="peer absolute opacity-0" /><span className="inline-block cursor-pointer rounded-full px-4 py-2.5 text-sm font-bold text-ink-soft shadow-[inset_0_0_0_1px_rgba(18,52,152,.18)] transition-colors peer-checked:bg-nova peer-checked:text-cream peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-nova-600">{o}</span></label>
+                <label key={o} className="relative"><input type="checkbox" name="service" value={o} className="peer absolute opacity-0" /><span className="inline-block cursor-pointer rounded-full px-4 py-2.5 text-sm font-bold text-ink-soft shadow-[inset_0_0_0_1px_rgba(18,52,152,.18)] transition-colors peer-checked:bg-volt peer-checked:text-ink peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-nova-600">{o}</span></label>
               ))}</div>
             </fieldset>
             <fieldset><legend className="mb-3 font-extrabold">Budget</legend>
               <div className="flex flex-wrap gap-2">{['Under ₹50k', '₹50k to ₹2L', '₹2L to ₹5L', '₹5L+', 'Not sure yet'].map((o, i) => (
-                <label key={o} className="relative"><input type="radio" name="budget" value={o} defaultChecked={i === 1} className="peer absolute opacity-0" /><span className="inline-block cursor-pointer rounded-full px-4 py-2.5 text-sm font-bold text-ink-soft shadow-[inset_0_0_0_1px_rgba(18,52,152,.18)] transition-colors peer-checked:bg-nova peer-checked:text-cream peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-nova-600">{o}</span></label>
+                <label key={o} className="relative"><input type="radio" name="budget" value={o} defaultChecked={i === 1} className="peer absolute opacity-0" /><span className="inline-block cursor-pointer rounded-full px-4 py-2.5 text-sm font-bold text-ink-soft shadow-[inset_0_0_0_1px_rgba(18,52,152,.18)] transition-colors peer-checked:bg-volt peer-checked:text-ink peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-nova-600">{o}</span></label>
               ))}</div>
             </fieldset>
             <Field name="message" label="Tell us about your project" textarea />

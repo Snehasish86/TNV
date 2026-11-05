@@ -3,13 +3,13 @@
 export const team = [
   {
     slug: 'founder',
-    name: 'Snehasish Mondal',
+    name: 'Snehasish Mandal',
     role: 'Founder',
-    photo: '/images/team/snehasish-mondal-founder-twenova.jpg',
+    photo: '/images/team/snehasish-mandal-founder-twenova.jpg',
     photoW: 900, photoH: 1125,
     headline: 'Full-stack Java developer and Founder of Twenova.',
     bio: [
-      'Snehasish Mondal is the Founder of Twenova and a full-stack Java developer. He works across the whole stack, from server-side logic, APIs and databases to the web interfaces people use every day.',
+      'Snehasish Mandal is the Founder of Twenova and a full-stack Java developer. He works across the whole stack, from server-side logic, APIs and databases to the web interfaces people use every day.',
       'At Twenova, Snehasish leads the technical side of client projects and of Twenova’s own products, Make Your Own Course and R9Resume. He works with clients to turn their requirements into a clear plan, chooses the right architecture for each project, and makes sure what ships is reliable, secure and easy to maintain.',
       'His focus is simple: build software that solves a real business problem, explain the trade-offs honestly, and keep improving it after launch.'
     ],

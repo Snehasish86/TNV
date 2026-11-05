@@ -13,7 +13,7 @@ export function CaseStudiesHub() {
   return (
     <>
       <PageHero crumbs={[['Home', '/'], ['Case studies', '/case-studies/']]} icon="shield"
-        title={<>Case <span className="text-sky-nova">studies</span></>}
+        title={<>Case <span className="text-volt">studies</span></>}
         lede="Projects Twenova has delivered, with details shared only where clients have approved them.">
         <Btn to="/portfolio/" variant="cream">See the full portfolio</Btn>
       </PageHero>
@@ -90,7 +90,7 @@ export default function CaseStudy() {
           <div data-rv style={{ '--d': '.1s' }}>
             <Kicker>Deliverables</Kicker>
             <h2 className="h-sec" data-split><Split text={hasDel ? 'What the client received' : 'What clients receive'} /></h2>
-            <ul className="mt-8 space-y-3">{deliverables.map((t) => <li key={t} className="flex items-center gap-3.5 rounded-2xl p-4 font-bold shadow-[inset_0_0_0_1px_rgba(18,52,152,.14)]"><span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-nova text-cream"><Icon name="check" className="h-4 w-4" /></span>{t}</li>)}</ul>
+            <ul className="mt-8 space-y-3">{deliverables.map((t) => <li key={t} className="flex items-center gap-3.5 rounded-2xl p-4 font-bold shadow-[inset_0_0_0_1px_rgba(18,52,152,.14)]"><span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-volt text-ink"><Icon name="check" className="h-4 w-4" /></span>{t}</li>)}</ul>
           </div>
         </div>
       </section>

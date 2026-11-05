@@ -13,7 +13,7 @@ import NotFound from './NotFound.jsx';
 
 const Para = ({ item }) => (typeof item === 'string'
   ? <p className="mt-4 leading-relaxed text-ink-soft">{item}</p>
-  : <ul className="mt-4 space-y-2.5">{item.list.map((x) => <li key={x} className="flex gap-3 text-ink-soft"><Icon name="check" className="mt-1 h-4 w-4 shrink-0 text-nova" />{x}</li>)}</ul>);
+  : <ul className="mt-4 space-y-2.5">{item.list.map((x) => <li key={x} className="flex gap-3 text-ink-soft"><span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-volt text-ink" aria-hidden="true"><Icon name="check" className="h-3 w-3" /></span>{x}</li>)}</ul>);
 
 /* ================= OUR PROCESS ================= */
 export const PROCESS = [
@@ -29,7 +29,7 @@ export function OurProcess() {
   return (
     <>
       <PageHero crumbs={[['Home', '/'], ['Our process', '/our-process/']]} icon="layers"
-        title={<>Our process, from discovery <span className="text-sky-nova">to launch and beyond</span></>}
+        title={<>Our process, from discovery <span className="text-volt">to launch and beyond</span></>}
         lede="Every Twenova project follows the same clear stages, with a review at the end of each one, so you always know what is done and what comes next.">
         <Btn to="/contact/" variant="cream">Start your project</Btn>
       </PageHero>
@@ -41,7 +41,7 @@ export function OurProcess() {
               <li key={t} data-rv className="card grid gap-6 sm:grid-cols-[90px_1fr_1fr] sm:items-start">
                 <span className="font-display text-4xl font-semibold text-nova">{String(i + 1).padStart(2, '0')}</span>
                 <div><h3 className="flex items-center gap-3 text-2xl font-semibold"><Icon name={ic} className="h-6 w-6 text-nova" />{t}</h3><p className="mt-3 text-ink-soft">{d}</p></div>
-                <ul className="space-y-2">{items.map((x) => <li key={x} className="flex gap-3 text-ink-soft"><Icon name="check" className="mt-1 h-4 w-4 shrink-0 text-nova" />{x}</li>)}</ul>
+                <ul className="space-y-2">{items.map((x) => <li key={x} className="flex gap-3 text-ink-soft"><span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-volt text-ink" aria-hidden="true"><Icon name="check" className="h-3 w-3" /></span>{x}</li>)}</ul>
               </li>
             ))}
           </ol>
@@ -73,13 +73,13 @@ export function PersonPage({ slug }) {
       </PageHero>
       <section className="sec" aria-labelledby="p-title">
         <div className="wrap grid items-start gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
-          <img src={m.photo} alt={`${m.name}, ${m.role} of ${SITE.name}`} width={m.photoW} height={m.photoH} decoding="async" className="aspect-[4/5] w-full max-w-md rounded-[2rem] object-cover shadow-[0_40px_80px_-50px_rgba(6,19,64,.6)]" />
+          <img src={m.photo} alt={`${m.name}, ${m.role} of ${SITE.name}`} width={m.photoW} height={m.photoH} decoding="async" className="img-tone aspect-[4/5] w-full max-w-md rounded-[2rem] object-cover shadow-[0_40px_80px_-50px_rgba(6,19,64,.6)]" />
           <div data-rv>
             <Kicker>{m.role}</Kicker>
             <h2 id="p-title" className="h-sec">About {m.name.split(' ')[0]}</h2>
             <p className="lede mt-6">{intro}</p>
             {m.bio.map((b) => <p key={b} className="mt-4 text-ink-soft">{b}</p>)}
-            {m.responsibilities.length > 0 && <><h3 className="mt-10 text-xl font-semibold">What {m.name.split(' ')[0]} leads at {SITE.name}</h3><ul className="mt-4 space-y-2">{m.responsibilities.map((x) => <li key={x} className="flex gap-3 text-ink-soft"><Icon name="check" className="mt-1 h-4 w-4 shrink-0 text-nova" />{x}</li>)}</ul></>}
+            {m.responsibilities.length > 0 && <><h3 className="mt-10 text-xl font-semibold">What {m.name.split(' ')[0]} leads at {SITE.name}</h3><ul className="mt-4 space-y-2">{m.responsibilities.map((x) => <li key={x} className="flex gap-3 text-ink-soft"><span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-volt text-ink" aria-hidden="true"><Icon name="check" className="h-3 w-3" /></span>{x}</li>)}</ul></>}
             {m.skills.length > 0 && <><h3 className="mt-10 text-xl font-semibold">Expertise</h3><ul className="mt-4 flex flex-wrap gap-2">{m.skills.map((x) => <li key={x} className="rounded-full bg-cream-200 px-4 py-2 text-sm font-bold">{x}</li>)}</ul></>}
             {m.experience.length > 0 && <><h3 className="mt-10 text-xl font-semibold">Experience</h3><ul className="mt-4 space-y-3">{m.experience.map(([r, c, d]) => <li key={r + c} className="text-ink-soft"><b className="text-ink">{r}</b>, {c} <span className="text-sm">({d})</span></li>)}</ul></>}
             {m.message && <blockquote className="mt-10 rounded-3xl bg-cream-200 p-7 font-display text-xl leading-snug">“{m.message}”</blockquote>}
@@ -94,7 +94,7 @@ export function PersonPage({ slug }) {
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:max-w-3xl">
               {other.map((o) => (
                 <Link key={o.slug} to={`/${o.slug}/`} className="card group flex items-center gap-5">
-                  <img src={o.photo} alt={`${o.name}, ${o.role} of ${SITE.name}`} width="96" height="120" loading="lazy" className="h-24 w-20 rounded-2xl object-cover" />
+                  <img src={o.photo} alt={`${o.name}, ${o.role} of ${SITE.name}`} width="96" height="120" loading="lazy" className="img-tone h-24 w-20 rounded-2xl object-cover" />
                   <div><p className="text-sm font-bold text-nova">{o.role}</p><p className="text-xl font-semibold">{o.name}</p></div>
                 </Link>
               ))}
@@ -147,7 +147,7 @@ export const FAQ_GROUPS = () => [
 export function Faqs() {
   return (
     <>
-      <PageHero crumbs={[['Home', '/'], ['FAQs', '/faqs/']]} icon="chat" title={<>Frequently asked <span className="text-sky-nova">questions</span></>} lede="Straight answers to the questions businesses ask most before starting a project with Twenova." />
+      <PageHero crumbs={[['Home', '/'], ['FAQs', '/faqs/']]} icon="chat" title={<>Frequently asked <span className="text-volt">questions</span></>} lede="Straight answers to the questions businesses ask most before starting a project with Twenova." />
       {FAQ_GROUPS().map(([g, items], i) => <Faq key={g} items={items} title={g} id={`faq-${i}`} />)}
       <Cta />
     </>
@@ -211,8 +211,8 @@ export function ProductPage({ slug }) {
       </PageHero>
       <section className="sec" aria-labelledby="pp-title">
         <div className="wrap grid items-center gap-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-16">
-          <figure data-rv className="overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-50px_rgba(6,19,64,.6)] ring-1 ring-nova/10">
-            <img src={p.image} alt={`${p.name} homepage: ${p.category} by Twenova`} width={p.imageW} height={p.imageH} decoding="async" className="w-full" />
+          <figure data-rv className="group overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-50px_rgba(6,19,64,.6)] ring-1 ring-nova/10">
+            <img src={p.image} alt={`${p.name} homepage: ${p.category} by Twenova`} width={p.imageW} height={p.imageH} decoding="async" className="img-tone w-full" />
           </figure>
           <div data-rv style={{ '--d': '.1s' }}>
             <span className="inline-flex items-center gap-2 rounded-full bg-volt px-3.5 py-1.5 text-xs font-extrabold text-ink"><i className="h-1.5 w-1.5 rounded-full bg-ink" />Twenova product · {p.status}</span>

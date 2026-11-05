@@ -153,8 +153,8 @@ export function AppPhone({ a, className = '' }) {
 /** Card that links to a security audit case study. */
 export function CaseCard({ c, i = 0 }) {
   return (
-    <article data-rv style={{ '--d': `${(i % 3) * 0.08}s` }} className="group relative flex flex-col overflow-hidden rounded-[1.75rem] text-cream shadow-[0_34px_60px_-38px_rgba(6,19,64,.6)]" data-cursor="Read case">
-      <div className="relative flex min-h-[260px] flex-col justify-between p-7 sm:p-9" style={{ background: c.color }}>
+    <article data-rv style={{ '--d': `${(i % 3) * 0.08}s` }} className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] text-cream shadow-[0_34px_60px_-38px_rgba(6,19,64,.6)]" data-cursor="Read case">
+      <div className="relative flex min-h-[260px] flex-1 flex-col justify-between p-7 sm:p-9" style={{ background: c.color }}>
         <div className="flex items-center justify-between">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-bold"><Icon name="shield" className="h-3.5 w-3.5" />{c.service}</span>
           <span className="font-display text-sm font-semibold text-white/60">{c.sector}</span>
@@ -175,7 +175,7 @@ export function ProductCard({ p, i = 0 }) {
   return (
     <article data-rv style={{ '--d': `${(i % 2) * 0.08}s` }} className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-nova-900 text-cream shadow-[0_34px_60px_-38px_rgba(6,19,64,.6)]" data-cursor="View product">
       <div className="relative overflow-hidden">
-        <img src={p.image} alt={`${p.name} by Twenova: ${p.category}`} width={p.imageW} height={p.imageH} loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
+        <img src={p.image} alt={`${p.name} by Twenova: ${p.category}`} width={p.imageW} height={p.imageH} loading="lazy" decoding="async" className="img-tone aspect-[16/10] w-full object-cover object-top transition-[transform,filter] duration-700 ease-out group-hover:scale-[1.04]" />
         <span className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-volt px-3.5 py-1.5 text-xs font-extrabold text-ink"><i className="h-1.5 w-1.5 rounded-full bg-ink" />Twenova product · {p.status}</span>
       </div>
       <div className="flex flex-1 flex-col p-7 sm:p-9">

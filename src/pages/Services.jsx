@@ -15,7 +15,7 @@ export function ServicesHub() {
   return (
     <>
       <PageHero crumbs={[['Home', '/'], ['Services', '/services/']]} icon="layers"
-        title={<>Turning ideas into <span className="text-sky-nova">products that perform</span></>}
+        title={<>Turning ideas into <span className="text-volt">products that perform</span></>}
         lede="End-to-end digital services that help businesses build, grow and lead. Pick one, or bring us the whole product.">
         <Btn to="/contact/" variant="cream">Start a project</Btn>
         <Btn to="#all" variant="ghost" icon={false}>Explore services</Btn>
@@ -98,7 +98,7 @@ export function ServiceDetail() {
           <div className="grid gap-px overflow-hidden rounded-3xl bg-nova/15 sm:grid-cols-2">
             {s.benefits.map(([t, d], i) => (
               <div key={t} data-rv style={{ '--d': `${(i % 2) * 0.08}s` }} className="bg-cream p-8 sm:p-10">
-                <Icon name="check" className="h-7 w-7 text-nova" />
+                <span className="grid h-11 w-11 place-items-center rounded-full bg-volt text-ink" aria-hidden="true"><Icon name="check" className="h-5 w-5" /></span>
                 <h3 className="mt-6 text-xl font-medium">{t}</h3>
                 <p className="mt-2.5 text-ink-soft">{d}</p>
               </div>

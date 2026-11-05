@@ -1,0 +1,76 @@
+# Twenova website: Apache / cPanel configuration (Vercel uses vercel.json instead)
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Always HTTPS
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# www.twenova.com -> twenova.com (matches the canonical URLs)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# Old URLs -> new pages (one hop, permanent)
+RewriteRule ^hire-php-developers\.html$ /hire/php-developers/ [R=301,L]
+RewriteRule ^hire-laravel-developers\.html$ /hire/laravel-developers/ [R=301,L]
+RewriteRule ^hire-codeigniter-developers\.html$ /hire/codeigniter-developers/ [R=301,L]
+RewriteRule ^hire-nodejs-developers\.html$ /hire/nodejs-developers/ [R=301,L]
+RewriteRule ^hire-ios-developers\.html$ /hire/ios-developers/ [R=301,L]
+RewriteRule ^hire-android-developers\.html$ /hire/android-developers/ [R=301,L]
+RewriteRule ^hire-flutter-developers\.html$ /hire/flutter-developers/ [R=301,L]
+RewriteRule ^hire-react-native-developers\.html$ /hire/react-native-developers/ [R=301,L]
+RewriteRule ^hire-reactjs-developers\.html$ /hire/reactjs-developers/ [R=301,L]
+RewriteRule ^hire-angular-developers\.html$ /hire/angular-developers/ [R=301,L]
+RewriteRule ^hire-vuejs-developers\.html$ /hire/vuejs-developers/ [R=301,L]
+RewriteRule ^hire-html-developers\.html$ /hire/html-developers/ [R=301,L]
+RewriteRule ^about\.html$ /about-us/ [R=301,L]
+RewriteRule ^services\.html$ /services/ [R=301,L]
+RewriteRule ^hire\.html$ /hire/ [R=301,L]
+RewriteRule ^portfolio\.html$ /portfolio/ [R=301,L]
+RewriteRule ^careers\.html$ /careers/ [R=301,L]
+RewriteRule ^blog\.html$ /blog/ [R=301,L]
+RewriteRule ^contact\.html$ /contact/ [R=301,L]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^about/?$ /about-us/ [R=301,L]
+RewriteRule ^services/web-development/?$ /web-development/ [R=301,L]
+RewriteRule ^services/mobile-app-development/?$ /mobile-app-development/ [R=301,L]
+RewriteRule ^services/ai-ml-development/?$ /ai-ml-development/ [R=301,L]
+RewriteRule ^services/blockchain-development/?$ /blockchain-development/ [R=301,L]
+RewriteRule ^services/cloud-devops/?$ /cloud-devops/ [R=301,L]
+RewriteRule ^services/ui-ux-design/?$ /ui-ux-design/ [R=301,L]
+RewriteRule ^services/digital-marketing-seo/?$ /services/ [R=301,L]
+RewriteRule ^services/ecommerce-development/?$ /ecommerce-development/ [R=301,L]
+RewriteRule ^services/security-audit/?$ /security-audit/ [R=301,L]
+RewriteRule ^services/product-engineering/?$ /saas-development/ [R=301,L]
+RewriteRule ^product-engineering/?$ /saas-development/ [R=301,L]
+RewriteRule ^digital-marketing-seo/?$ /services/ [R=301,L]
+
+# Pages without a trailing slash -> with slash (e.g. /about-us -> /about-us/)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*[^/])$ /$1/ [R=301,L]
+</IfModule>
+
+# Caching: pages always fresh, versioned assets cached for a year
+<IfModule mod_headers.c>
+<FilesMatch "\.(html|xml|txt)$">
+Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
+<FilesMatch "\.(js|css|woff2|woff)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+<FilesMatch "\.(jpg|jpeg|png|svg|webp|ico)$">
+Header set Cache-Control "public, max-age=2592000"
+</FilesMatch>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript text/xml application/xml text/plain image/svg+xml
+</IfModule>

@@ -16,7 +16,7 @@ function Plans({ who }) {
               {p.hot && <span className="absolute right-6 top-6 rounded-full bg-cream px-3 py-1.5 text-xs font-extrabold text-nova">Most popular</span>}
               <h3 className="text-2xl font-semibold">{p.name}</h3>
               <p className={`mt-3 ${p.hot ? 'text-mist' : 'text-ink-soft'}`}>{p.desc}</p>
-              <ul className="mb-9 mt-6 space-y-3">{p.items.map((x) => <li key={x} className={`flex gap-3 text-[.96rem] ${p.hot ? 'text-mist' : 'text-ink-soft'}`}><Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-sky-nova" />{x}</li>)}</ul>
+              <ul className="mb-9 mt-6 space-y-3">{p.items.map((x) => <li key={x} className={`flex gap-3 text-[.96rem] ${p.hot ? 'text-mist' : 'text-ink-soft'}`}><Icon name="check" className={`mt-0.5 h-5 w-5 shrink-0 ${p.hot ? 'text-volt' : 'text-nova'}`} />{x}</li>)}</ul>
               <div className="mt-auto"><Btn to="#start" variant={p.hot ? 'cream' : 'primary'}>Get started</Btn></div>
             </article>
           ))}
@@ -30,7 +30,7 @@ export function HireHub() {
   return (
     <>
       <PageHero crumbs={[['Home', '/'], ['Hire developers', '/hire/']]} icon="users"
-        title={<>Build your dream team with <span className="text-sky-nova">dedicated developers</span></>}
+        title={<>Build your dream team with <span className="text-volt">dedicated developers</span></>}
         lede="One expert or a full product team. Reviewed developers who join your tools, your stand-ups and your roadmap, on an hourly, monthly or project basis."
         stats={[['3', 'Engagement models'], ['NDA', 'Before work starts'], ['You', 'Interview and choose']]}>
         <Btn to="#start" variant="cream">Hire now</Btn>
@@ -69,7 +69,7 @@ export function HireDetail() {
   return (
     <>
       <PageHero crumbs={[['Home', '/'], ['Hire developers', '/hire/'], [r.tech, `/hire/${r.slug}/`]]} icon={r.icon}
-        title={<>Hire dedicated <span className="text-sky-nova">{r.tech}</span> developers</>} lede={r.intro} tags={r.tags}
+        title={<>Hire dedicated <span className="text-volt">{r.tech}</span> developers</>} lede={r.intro} tags={r.tags}
         stats={[['3', 'Engagement models'], ['NDA', 'Before work starts'], ['You', 'Interview and choose']]}>
         <Btn to="#start" variant="cream">{`Hire ${r.tech} developers`}</Btn>
         <Btn to="#expertise" variant="ghost" icon={false}>View expertise</Btn>

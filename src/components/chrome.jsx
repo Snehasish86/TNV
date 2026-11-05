@@ -4,56 +4,40 @@ import { Brand, Btn, Icon, Wordmark, Split } from './ui.jsx';
 import { services, coreServices } from '../data/services.js';
 import { team } from '../data/team.js';
 import { legal } from '../data/legal.js';
-import { roles, groups } from '../data/hire.js';
 import { SITE } from '../data/site.js';
+import { roles } from '../data/hire.js';
 
-function Dropdown({ label, to, children, wide, match = [] }) {
-  const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
-  const timer = useRef();
-  useEffect(() => setOpen(false), [pathname]);
-  const show = () => { clearTimeout(timer.current); setOpen(true); };
-  const hide = () => { timer.current = setTimeout(() => setOpen(false), 120); };
-  const active = pathname.startsWith(to) || match.some((m) => pathname.startsWith(m));
-  return (
-    <li className="relative" onMouseEnter={show} onMouseLeave={hide}
-      onFocus={show} onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) hide(); }}
-      onKeyDown={(e) => { if (e.key === 'Escape') setOpen(false); }}>
-      <div className="flex items-center">
-        <Link to={to} aria-current={active ? 'page' : undefined} className={`rounded-full py-2.5 pl-4 pr-1 text-[.95rem] font-semibold transition-colors ${active ? 'text-white' : 'text-white/80 hover:text-white'}`}>{label}</Link>
-        <button type="button" aria-expanded={open} aria-label={`Show ${label} menu`} onClick={() => setOpen((v) => !v)} className="grid h-8 w-7 place-items-center text-white/70 hover:text-white">
-          <Icon name="chev" className={`h-3 w-3 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
-        </button>
-      </div>
-      <div className={`absolute left-1/2 top-full z-50 pt-3 transition-[opacity,transform,visibility] duration-300 ease-out ${open ? 'visible translate-y-0 opacity-100' : 'invisible translate-y-2 opacity-0'}`} style={{ transform: `translateX(-50%) translateY(${open ? 0 : 8}px)` }}>
-        <div className={`rounded-3xl bg-cream p-5 text-ink shadow-[0_30px_60px_-20px_rgba(6,19,64,.5)] ${wide ? 'w-[720px]' : 'w-[560px]'}`}>{children}</div>
-      </div>
-    </li>
-  );
-}
-
-const linkCls = 'flex items-center gap-3 rounded-xl px-3 py-2.5 text-[.94rem] font-semibold transition-colors hover:bg-cream-200 hover:text-nova';
+const COMPANY = [
+  ['About us', '/about-us/', 'Who we are and who leads Twenova'],
+  ['Our process', '/our-process/', 'How we take projects from idea to launch'],
+  ['Contact', '/contact/', 'Email, phone and social media']
+];
+// Plain, instant navigation: no hover effects, no transitions. Dropdowns open on click only.
+const navItem = (on) => `rounded-full px-4 py-2.5 text-[.95rem] font-semibold ${on ? 'bg-white/10 text-white' : 'text-white/80 hover:text-white'}`;
 
 export function Header() {
   const [solid, setSolid] = useState(false);
-    const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const [open, setOpen] = useState(null); // 'services' | 'company' | null
+  const navRef = useRef(null);
   const { pathname } = useLocation();
-  useEffect(() => setMenu(false), [pathname]);
-  // Header stays visible; it only turns solid and slightly compact once, past 24px.
-  // (Hiding on scroll flickered with smooth scrolling, because each frame moves only a few pixels.)
+  useEffect(() => { setMenu(false); setOpen(null); }, [pathname]);
   useEffect(() => {
     let raf = 0, cur = null;
     const on = () => {
       if (raf) return;
-      raf = requestAnimationFrame(() => {
-        raf = 0;
-        const v = window.scrollY > 24;
-        if (v !== cur) { cur = v; setSolid(v); }
-      });
+      raf = requestAnimationFrame(() => { raf = 0; const v = window.scrollY > 24; if (v !== cur) { cur = v; setSolid(v); } });
     };
     on(); window.addEventListener('scroll', on, { passive: true });
     return () => { window.removeEventListener('scroll', on); cancelAnimationFrame(raf); };
   }, []);
+  useEffect(() => {
+    if (!open) return;
+    const away = (e) => { if (navRef.current && !navRef.current.contains(e.target)) setOpen(null); };
+    const esc = (e) => { if (e.key === 'Escape') setOpen(null); };
+    document.addEventListener('mousedown', away); document.addEventListener('keydown', esc);
+    return () => { document.removeEventListener('mousedown', away); document.removeEventListener('keydown', esc); };
+  }, [open]);
   useEffect(() => {
     document.documentElement.classList.toggle('menu-open', menu);
     window.__lenis?.[menu ? 'stop' : 'start']();
@@ -62,51 +46,73 @@ export function Header() {
     return () => window.removeEventListener('keydown', k);
   }, [menu]);
 
+  const inServices = pathname === '/services/' || services.some((x) => pathname.startsWith(`/${x.slug}/`));
+  const inCompany = COMPANY.some(([, to]) => pathname.startsWith(to));
+  const toggle = (k) => setOpen((v) => (v === k ? null : k));
+
   return (
     <>
-      <header className={`fixed inset-x-0 top-0 z-[100] pt-[env(safe-area-inset-top)] text-cream transition-[background-color,box-shadow] duration-500 ease-out ${solid || menu ? 'bg-nova-900/95 shadow-[0_1px_0_rgba(254,250,239,.1)] backdrop-blur-md' : ''}`}>
-        <div className={`wrap flex items-center justify-between gap-6 transition-[height] duration-500 ease-out ${solid ? 'h-16' : 'h-20'}`}>
+      <header data-nav className={`fixed inset-x-0 top-0 z-[100] pt-[env(safe-area-inset-top)] text-cream ${solid || menu || open ? 'bg-nova-900 shadow-[0_1px_0_rgba(254,250,239,.1)]' : ''}`}>
+        <div className="wrap flex h-[72px] items-center justify-between gap-6">
           <Brand />
-          <nav aria-label="Main" className="hidden lg:block">
+          <nav aria-label="Main" className="hidden lg:block" ref={navRef}>
             <ul className="flex items-center gap-1">
-              <Dropdown label="Services" to="/services/" match={services.map((x) => `/${x.slug}/`)}>
-                <div className="grid grid-cols-2 gap-1">
-                  {services.map((s) => <Link key={s.slug} to={`/${s.slug}/`} className={linkCls}><Icon name={s.icon} className="h-4 w-4 shrink-0 text-nova" />{s.name}</Link>)}
-                  <Link to="/services/" className={`${linkCls} text-nova`}><Icon name="arrow" className="h-4 w-4" />All services</Link>
-                </div>
-              </Dropdown>
-              <Dropdown label="Hire developers" to="/hire/" wide>
-                <div className="grid grid-cols-3 gap-x-4">
-                  {groups.map((g) => (
-                    <div key={g}>
-                      <p className="mx-3 mb-1 mt-1 text-xs font-extrabold uppercase tracking-wider text-ink-soft">{g}</p>
-                      {roles.filter((r) => r.group === g).map((r) => <Link key={r.slug} to={`/hire/${r.slug}/`} className={linkCls}>{r.label}</Link>)}
-                    </div>
-                  ))}
-                </div>
-                <Link to="/hire/" className={`${linkCls} mt-2 border-t border-nova/10 pt-3 text-nova`}><Icon name="arrow" className="h-4 w-4" />How hiring works</Link>
-              </Dropdown>
-              {[['Work', '/portfolio/'], ['Products', '/products/'], ['About', '/about-us/'], ['Blog', '/blog/']].map(([n, to]) => (
-                <li key={to}><NavLink to={to} className={({ isActive }) => `relative rounded-full px-4 py-2.5 text-[.95rem] font-semibold transition-colors after:absolute after:bottom-0.5 after:left-1/2 after:h-1 after:w-1 after:-translate-x-1/2 after:rounded-full after:bg-volt after:transition-opacity ${isActive ? 'text-white after:opacity-100' : 'text-white/80 after:opacity-0 hover:text-white'}`}>{n}</NavLink></li>
-              ))}
+              <li><NavLink end to="/" className={({ isActive }) => navItem(isActive)}>Home</NavLink></li>
+              <li><NavLink to="/portfolio/" className={({ isActive }) => navItem(isActive)}>Work</NavLink></li>
+              <li><NavLink to="/products/" className={({ isActive }) => navItem(isActive)}>Products</NavLink></li>
+              <li className="relative">
+                <button type="button" aria-expanded={open === 'services'} aria-controls="dd-services" onClick={() => toggle('services')} className={`${navItem(open === 'services' || inServices)} inline-flex items-center gap-1.5`}>
+                  Services <Icon name="chev" className={`h-3 w-3 ${open === 'services' ? 'rotate-180' : ''}`} />
+                </button>
+                {open === 'services' && (
+                  <div id="dd-services" className="absolute left-1/2 top-full z-50 mt-3 max-h-[calc(100vh-110px)] w-[min(640px,calc(100vw-48px))] -translate-x-1/2 overflow-y-auto overscroll-contain rounded-3xl bg-nova-900 p-3 text-cream shadow-[0_30px_60px_-20px_rgba(0,0,0,.6)] ring-1 ring-white/10" data-lenis-prevent>
+                    <ul className="grid grid-cols-2 gap-0.5">
+                      {services.map((x) => (
+                        <li key={x.slug}><Link to={`/${x.slug}/`} className="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-[.92rem] font-semibold leading-snug hover:bg-white/10">
+                          <Icon name={x.icon} className="h-4 w-4 shrink-0 text-volt" />{x.name}</Link></li>
+                      ))}
+                    </ul>
+                    <Link to="/services/" className="mt-1.5 flex items-center gap-2 border-t border-white/10 px-3.5 pb-1.5 pt-3 text-sm font-bold text-volt hover:underline">All services <Icon name="arrow" className="h-4 w-4" /></Link>
+                  </div>
+                )}
+              </li>
+              <li className="relative">
+                <button type="button" aria-expanded={open === 'company'} aria-controls="dd-company" onClick={() => toggle('company')} className={`${navItem(open === 'company' || inCompany)} inline-flex items-center gap-1.5`}>
+                  Company <Icon name="chev" className={`h-3 w-3 ${open === 'company' ? 'rotate-180' : ''}`} />
+                </button>
+                {open === 'company' && (
+                  <div id="dd-company" className="absolute right-0 top-full z-50 mt-3 w-[340px] rounded-3xl bg-nova-900 p-3 text-cream shadow-[0_30px_60px_-20px_rgba(0,0,0,.6)] ring-1 ring-white/10">
+                    <ul>
+                      {COMPANY.map(([n, to, d]) => (
+                        <li key={to}><Link to={to} className={`block rounded-2xl px-4 py-3.5 hover:bg-white/10 ${pathname.startsWith(to) ? 'bg-white/10' : ''}`}>
+                          <span className="block text-[1.02rem] font-bold">{n}</span><span className="mt-0.5 block text-sm text-mist">{d}</span></Link></li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </li>
             </ul>
           </nav>
           <div className="flex items-center gap-3">
-            <Btn to="/contact/" variant="cream" className="!hidden !px-5 !py-3.5 text-[.95rem] sm:!inline-flex">Start a project</Btn>
-            <button type="button" onClick={() => setMenu((v) => !v)} aria-expanded={menu} aria-controls="mnav" aria-label={menu ? 'Close menu' : 'Open menu'} className="grid h-12 w-12 place-items-center rounded-full shadow-[inset_0_0_0_1.5px_rgba(254,250,239,.2)] lg:hidden">
+            <Link to="/contact/" className="hidden items-center gap-2 rounded-full bg-cream px-5 py-3 text-[.95rem] font-extrabold text-nova hover:bg-volt hover:text-ink sm:inline-flex">Start a project <Icon name="arrow" className="h-4 w-4" /></Link>
+            <button type="button" onClick={() => setMenu((v) => !v)} aria-expanded={menu} aria-controls="mnav" aria-label={menu ? 'Close menu' : 'Open menu'} className="grid h-12 w-12 place-items-center rounded-full shadow-[inset_0_0_0_1.5px_rgba(254,250,239,.25)] lg:hidden">
               <Icon name={menu ? 'close' : 'menu'} className="h-5 w-5" />
             </button>
           </div>
         </div>
       </header>
-      <div id="mnav" className={`fixed inset-0 z-[90] overflow-y-auto bg-nova-900 px-5 pb-10 pt-28 text-cream transition-[opacity,visibility] duration-500 lg:hidden ${menu ? 'visible opacity-100' : 'invisible opacity-0'}`} aria-hidden={!menu}>
-        <nav aria-label="Mobile" className="wrap !px-0">
-          {[['Home', '/'], ['Services', '/services/'], ['Hire developers', '/hire/'], ['Work', '/portfolio/'], ['Products', '/products/'], ['Case studies', '/case-studies/'], ['About us', '/about-us/'], ['Our process', '/our-process/'], ['Blog', '/blog/'], ['FAQs', '/faqs/'], ['Careers', '/careers/'], ['Contact', '/contact/']].map(([n, to], i) => (
-            <Link key={to} to={to} tabIndex={menu ? 0 : -1} className={`block border-b border-white/10 py-3 font-display text-[clamp(1.6rem,7vw,2.3rem)] font-medium transition-[transform,opacity] duration-700 ease-out ${menu ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`} style={{ transitionDelay: menu ? `${0.08 + i * 0.04}s` : '0s' }}>{n}</Link>
-          ))}
-          <Btn to="/contact/" variant="cream" className="mt-8" tabIndex={menu ? 0 : -1}>Start a project</Btn>
-        </nav>
-      </div>
+      {menu && (
+        <div id="mnav" className="fixed inset-0 z-[90] overflow-y-auto bg-nova-900 px-5 pb-10 pt-24 text-cream lg:hidden">
+          <nav aria-label="Mobile" className="wrap !px-0">
+            <ul>
+              {[['Home', '/'], ['Work', '/portfolio/'], ['Products', '/products/'], ['Services', '/services/'], ...COMPANY.map(([n, to]) => [n, to])].map(([n, to]) => (
+                <li key={to}><Link to={to} className={`block border-b border-white/10 py-4 font-display text-[clamp(1.5rem,6.5vw,2.1rem)] font-medium ${pathname === to ? 'text-volt' : ''}`}>{n}</Link></li>
+              ))}
+            </ul>
+            <Link to="/contact/" className="mt-8 inline-flex items-center gap-2 rounded-full bg-cream px-6 py-4 font-extrabold text-nova">Start a project <Icon name="arrow" className="h-4 w-4" /></Link>
+          </nav>
+        </div>
+      )}
     </>
   );
 }

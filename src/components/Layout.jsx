@@ -78,7 +78,6 @@ export default function Layout() {
       <a href="#main" className="fixed left-4 top-[-80px] z-[300] rounded-lg bg-cream px-4 py-2.5 font-bold text-nova focus:top-4">Skip to content</a>
       {loader && <Preloader />}
       <div key={run} className={`route-curtain ${run ? 'run' : ''}`} aria-hidden="true"><Mark /></div>
-      <div className="progress-bar" aria-hidden="true" />
       <Header />
       <main id="main" key={pathname} className="page-enter"><Outlet /></main>
       <Footer />

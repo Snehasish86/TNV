@@ -29,7 +29,7 @@ export function useNovaCursor() {
     size(); window.addEventListener('resize', size);
 
     const P = { x: innerWidth / 2, y: innerHeight / 2 }, R = { ...P }, D = { ...P }, last = { ...P };
-    let shown = false, dirty = false, stick = null, parts = [], sx = 1, sy = 1, ang = 0, travel = 0, raf = 0;
+    let shown = false, dirty = false, overNav = false, stick = null, parts = [], sx = 1, sy = 1, ang = 0, travel = 0, raf = 0;
     const emit = (x, y, n, burst) => {
       for (let i = 0; i < n; i++) {
         const a = burst ? Math.random() * Math.PI * 2 : -Math.PI / 2 + (Math.random() - 0.5) * 0.8;
@@ -42,9 +42,9 @@ export function useNovaCursor() {
       P.x = e.clientX; P.y = e.clientY;
       if (!shown) { shown = true; Object.assign(R, P); Object.assign(D, P); Object.assign(last, P); }
       travel += Math.hypot(P.x - last.x, P.y - last.y); last.x = P.x; last.y = P.y;
-      if (travel > 16 && !ring.classList.contains('is-label')) { travel = 0; emit(P.x, P.y, 1, false); }
+      if (travel > 16 && !overNav && !ring.classList.contains('is-label')) { travel = 0; emit(P.x, P.y, 1, false); }
     };
-    const down = (e) => { ring.classList.add('is-down'); emit(e.clientX, e.clientY, 14, true); };
+    const down = (e) => { if (overNav) return; ring.classList.add('is-down'); emit(e.clientX, e.clientY, 14, true); };
     const up = () => ring.classList.remove('is-down');
     const leave = () => { ring.classList.add('is-hidden'); dot.classList.add('is-hidden'); };
     const enter = () => { ring.classList.remove('is-hidden'); dot.classList.remove('is-hidden'); };
@@ -59,6 +59,8 @@ export function useNovaCursor() {
       ring.classList.toggle('is-hidden', !!inp); dot.classList.toggle('is-hidden', !!inp);
       root.classList.toggle('has-cursor', !inp);
       if (inp) return;
+      overNav = !!t.closest('[data-nav], #mnav');
+      if (overNav) { stick = null; body.style.removeProperty('--w'); body.style.removeProperty('--h'); body.style.removeProperty('--br'); setState(null); return; } // plain cursor over the navigation
       const lab = t.closest('[data-cursor]'), st = t.closest('[data-stick]'), lnk = t.closest('a,button,summary,label,select');
       const big = t.closest('h1,h2,blockquote,.scrub');
       stick = null; body.style.removeProperty('--w'); body.style.removeProperty('--h'); body.style.removeProperty('--br');
@@ -127,7 +129,7 @@ export function useGlobalFx() {
     const busy = new WeakSet();
     const scramble = (e) => {
       if (!isFine() || isReduced()) return;
-      const a = e.target.closest?.('header nav a, footer li a'); if (!a || busy.has(a)) return;
+      const a = e.target.closest?.('footer li a'); if (!a || busy.has(a)) return;
       const node = Array.from(a.childNodes).find((n) => n.nodeType === 3 && n.textContent.trim()); if (!node) return;
       busy.add(a); const orig = node.textContent; let f = 0;
       const tick = () => {
@@ -155,7 +157,7 @@ export function useMotion(pathname) {
         // masked word reveals
         $$('[data-split]').forEach((el) => {
           const words = $$('.wi', el); if (!words.length) return;
-          gsap.from(words, { yPercent: 115, rotate: 6, duration: 1.3, ease: 'expo.out', stagger: 0.045, scrollTrigger: { trigger: el, start: 'top 90%' } });
+          gsap.from(words, { yPercent: 110, rotate: 4, duration: 1.0, ease: 'expo.out', stagger: 0.03, scrollTrigger: { trigger: el, start: 'top 90%' } });
         });
         // statement: words light up while scrolling
         $$('.scrub').forEach((el) => gsap.to($$('.sw', el), { opacity: 1, stagger: 0.1, ease: 'none', scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 45%', scrub: true } }));
@@ -167,7 +169,7 @@ export function useMotion(pathname) {
         // hero parallax
         $$('[data-par]').forEach((el) => gsap.to(el, { yPercent: -16, opacity: 0.25, ease: 'none', scrollTrigger: { trigger: el.closest('section'), start: 'top top', end: 'bottom top', scrub: true } }));
         // stacking service cards (dim layer, never a CSS filter)
-        const cards = $$('.scard');
+        const cards = window.innerWidth > 900 ? $$('.scard') : []; // stacking only on larger screens
         cards.forEach((c, i) => {
           if (i === cards.length - 1) return;
           gsap.fromTo(c, { scale: 1, '--dim': 0 }, { scale: 0.92, '--dim': 0.55, ease: 'none', scrollTrigger: { trigger: cards[i + 1], start: 'top bottom', end: 'top 25%', scrub: true } });
@@ -224,7 +226,7 @@ export function useMotion(pathname) {
 
       // magnetic buttons + card tilt + fan tilt (pointer only)
       if (isFine()) {
-        $$('.btn, [data-magnetic]').forEach((el) => {
+        $$('.btn, [data-magnetic]').filter((el) => !el.closest('[data-nav]')).forEach((el) => {
           const xTo = gsap.quickTo(el, 'x', { duration: 0.8, ease: 'elastic.out(1,.4)' }), yTo = gsap.quickTo(el, 'y', { duration: 0.8, ease: 'elastic.out(1,.4)' });
           const mv = (e) => { const b = el.getBoundingClientRect(); xTo((e.clientX - b.left - b.width / 2) * 0.3); yTo((e.clientY - b.top - b.height / 2) * 0.4); };
           const lv = () => { xTo(0); yTo(0); };

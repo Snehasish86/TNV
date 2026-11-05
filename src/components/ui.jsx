@@ -138,9 +138,9 @@ export function IconCards({ items, cols = 3, dark = false, linkBase }) {
   return (
     <div className={`grid gap-5 ${grid}`}>
       {items.map(([ic, t, d, to], i) => (
-        <article key={t} data-rv style={{ '--d': `${(i % cols) * 0.07}s` }} className={`${dark ? 'card-dark' : 'card spot'} group flex flex-col`}>
+        <article key={t} data-rv style={{ '--d': `${(i % cols) * 0.07}s` }} className={`${dark ? 'card-dark' : 'card spot'} group flex min-w-0 flex-col`}>
           <span className={`ico ${dark ? '!bg-cream !text-nova' : 'spot-ico'}`}><Icon name={ic} /></span>
-          <h3 className="mt-7 text-xl font-medium">{to ? <Link to={to} className="stretched outline-none">{t}</Link> : t}</h3>
+          <h3 className={`mt-7 min-w-0 font-medium [overflow-wrap:anywhere] ${cols === 4 ? 'text-[clamp(1rem,1.45vw,1.25rem)]' : 'text-xl'}`}>{to ? <Link to={to} className="stretched outline-none">{t}</Link> : t}</h3>
           <p className={`mt-3 text-[.97rem] ${dark ? 'text-mist' : 'text-ink-soft'}`}>{d}</p>
           {to && <span className="spot-sub mt-6 inline-flex items-center gap-2 text-sm font-bold text-nova transition-transform duration-500 ease-out group-hover:translate-x-1">Learn more <Icon name="arrow" className="h-4 w-4" /></span>}
         </article>
@@ -154,7 +154,7 @@ export function Crumbs({ items }) {
     <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-sm font-semibold text-mist hero-in">
       {items.map(([n, to], i) => (
         <span key={n} className="flex items-center gap-2">
-          {i > 0 && <Icon name="crumb" className="h-3 w-3 text-sky-nova" />}
+          {i > 0 && <Icon name="crumb" className="h-3 w-3 text-volt" />}
           {i < items.length - 1 ? <Link to={to} className="opacity-80 hover:underline hover:underline-offset-4 hover:opacity-100">{n}</Link> : <span aria-current="page">{n}</span>}
         </span>
       ))}
